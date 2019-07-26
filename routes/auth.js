@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/User.js');
+const { isLoggedIn, isFormFilled } = require('../middlewares/authMiddlewares.js');
 
 const saltRounds = 10;
 
@@ -35,10 +36,15 @@ router.post('/signup', async (req, res, next) => {
 });
 
 router.get('/login', (req, res, next) => {
-  res.render('login');
+  const data = {
+    messages: req.flash('errorFormNotFilled'),
+    emailData: req.flash('errorEmailData'),
+    formData: req.flash('errorDataForm')
+  };
+  res.render('login', data);
 });
 
-router.post('/login', async (req, res, next) => {
+router.post('/login', isLoggedIn, isFormFilled, async (req, res, next) => {
   const { username, password } = req.body;
   try {
     const user = await User.findOne({ username });
@@ -49,6 +55,10 @@ router.post('/login', async (req, res, next) => {
       req.session.currentUser = user;
       res.redirect('/userHome');
     } else {
+      if (username) {
+        req.flash('errorDataForm', username);
+      }
+      req.flash('errorEmailData', 'Incorrect password');
       res.redirect('/auth/login');
     }
   } catch (error) {
