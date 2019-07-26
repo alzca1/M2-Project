@@ -106,12 +106,12 @@ Other features:
 User model
 
 ```
-image: String
+picture: String
 username: String
 location: String
-mail: String
+email: String
 password: String
-shareNetworks: [Array]
+shareNetworks: {Object}
 artists: [Array]
 albums: [Array]
 tracks: [Array]

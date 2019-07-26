@@ -11,7 +11,8 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
+const userHomeRouter = require('./routes/userHome');
 
 const app = express();
 
@@ -54,14 +55,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/auth', authRouter);
+app.use('/userHome', userHomeRouter);
 
 // -- 404 and error handler
 
 // NOTE: requires a views/not-found.ejs template
 app.use((req, res, next) => {
   res.status(404);
-  res.render('not-found');
+  res.render('notFound');
 });
 
 // NOTE: requires a views/error.ejs template
