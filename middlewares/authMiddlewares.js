@@ -16,7 +16,6 @@ const isNotLoggedIn = (req, res, next) => {
 
 const isFormFilled = (req, res, next) => {
   const { username, password } = req.body;
-
   if (!username && !password) {
     req.flash('errorFormNotFilled', 'All fields are required');
     return res.redirect(req.originalUrl);
@@ -32,6 +31,21 @@ const isFormFilled = (req, res, next) => {
   }
   next();
 };
+
+// const isCorrectPassword = (req, res, next) => {
+//   const { username, password } = req.body;
+//   if (bcrypt.compareSync(password, user.password)) {
+//     req.session.currentUser = user;
+//     res.redirect('/userHome');
+//   } else {
+//     if (username) {
+//       req.flash('errorDataForm', username);
+//     }
+//     req.flash('errorEmailData', 'Incorrect password');
+//     res.redirect('/auth/login');
+//   }
+//   next();
+// };
 
 module.exports = {
   isLoggedIn,

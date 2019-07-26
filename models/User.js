@@ -12,7 +12,8 @@ const userSchema = new Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   location: {
     latitude: String,
@@ -24,8 +25,8 @@ const userSchema = new Schema({
     required: true
   },
   picture: {
-    type: String,
-    require: true
+    type: String
+    // require: true
   },
   shareNetwork: {
     facebook: {

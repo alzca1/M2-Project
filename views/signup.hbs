@@ -24,3 +24,22 @@
 </form>
 
 
+{{#if formData.length}}
+<p class="validation">
+  {{#each formData}}{{this}}{{/each}}
+</p>
+{{/if}}
+
+{{#if usernameExistent.length}}
+<p class="validation">
+  {{#each usernameExistent}}{{this}}{{/each}}
+</p>
+{{/if}}
+
+{{#if emailformat.length}}
+<p class="validation">
+  {{#each emailformat}}{{this}}{{/each}}
+</p>
+{{/if}}
+
+
