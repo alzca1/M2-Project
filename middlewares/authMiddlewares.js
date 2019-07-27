@@ -32,14 +32,27 @@ const isCorrectPasswordFormat = (req, res, next) => {
 const isCorrectEmailFormat = (req, res, next) => {
   const { username, password, email, location } = req.body;
   const newData = { username, password, email, location };
-  const emailRegex = new RegExp('^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$');
+  const emailRegex = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
+  console.log(emailRegex);
+  const e = 'a@a.com';
+  const test = e.match(emailRegex);
+  console.log(test);
   if (!email.match(emailRegex)) {
     if (newData) {
       req.flash('errorDataForm', newData);
     }
     req.flash('errorEmailFormat', 'Incorrect email format');
+
     return res.redirect('/auth/signup');
   }
+  // if (!email.match(emailRegex)) {
+  //   if (newData) {
+  //     req.flash('errorDataForm', newData);
+  //   }
+  //   req.flash('errorEmailFormat', 'Incorrect email format');
+
+  //   return res.redirect('/auth/signup');
+  // }
   next();
 };
 

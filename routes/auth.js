@@ -11,6 +11,7 @@ router.get('/signup', (req, res, next) => {
   const data = {
     messages: req.flash('errorFormNotFilled'),
     usernameExistent: req.flash('errorUserExistent'),
+    emailExistent: req.flash('errorEmailExistent'),
     passwordformat: req.flash('errorPasswordFormat'),
     formData: req.flash('errorDataForm'),
     emailformat: req.flash('errorEmailFormat')
@@ -31,6 +32,14 @@ router.post('/signup', isCorrectPasswordFormat, isCorrectEmailFormat, async (req
         req.flash('errorDataForm', newData);
       }
       req.flash('errorUserExistent', 'Username already exists');
+      return res.redirect('/auth/signup');
+    }
+    const newEmail = await User.findOne({ email });
+    if (newEmail) {
+      if (newData) {
+        req.flash('errorDataForm', newData);
+      }
+      req.flash('errorEmailExistent', 'Email already exists');
       return res.redirect('/auth/signup');
     }
     const newUser = await User.create({
