@@ -16,6 +16,7 @@ const userHomeRouter = require('./routes/userHome');
 const profileRouter = require('./routes/profile');
 const searchResultsRouter = require('./routes/searchResults');
 const artistRouter = require('./routes/artist');
+const albumRouter = require('./routes/album');
 
 const app = express();
 
@@ -63,6 +64,7 @@ app.use('/userHome', userHomeRouter);
 app.use('/profile', profileRouter);
 app.use('/searchResults', searchResultsRouter);
 app.use('/artist', artistRouter);
+app.use('/album', albumRouter);
 
 // -- 404 and error handler
 

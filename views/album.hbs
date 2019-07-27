@@ -1,0 +1,28 @@
+<section class="tracks">
+
+  <header>
+    <a href="javascript: history.go(-1)">go back</a>
+
+    <h2>{{albumData.name}}</h2>
+    <h2>{{albumData.release_date}}</h2>
+  </header>
+
+  <div>
+    <img src="{{albumData.images.[0].url}}" alt="{{albumData.name}}">
+  </div>
+
+
+  <section class="track-list">
+    {{#each tracks}}
+      <article>
+        <p>{{this.name}}</p>
+        <audio controls name="media">
+          <source src="{{this.preview_url}}" type="audio/mpeg">
+        </audio>
+      </article>
+    {{/each}}
+  </section>
+
+</section>
+
+{{> userNavbar}}
