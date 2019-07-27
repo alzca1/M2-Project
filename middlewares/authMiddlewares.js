@@ -15,6 +15,34 @@ const isNotLoggedIn = (req, res, next) => {
   next();
 };
 
+const isCorrectPasswordFormat = (req, res, next) => {
+  const { username, password, email, location } = req.body;
+  const newData = { username, password, email, location };
+  const passwordRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
+  if (!password.match(passwordRegex)) {
+    if (newData) {
+      req.flash('errorDataForm', newData);
+    }
+    req.flash('errorPasswordFormat', 'Password must contain at least 8 characters, 1 Uppercase letter, 1 lowercase letter and 1 number');
+    return res.redirect('/auth/signup');
+  }
+  next();
+};
+
+const isCorrectEmailFormat = (req, res, next) => {
+  const { username, password, email, location } = req.body;
+  const newData = { username, password, email, location };
+  const emailRegex = new RegExp('^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$');
+  if (!email.match(emailRegex)) {
+    if (newData) {
+      req.flash('errorDataForm', newData);
+    }
+    req.flash('errorEmailFormat', 'Incorrect email format');
+    return res.redirect('/auth/signup');
+  }
+  next();
+};
+
 const isFormFilled = (req, res, next) => {
   const { username, password } = req.body;
   if (!username && !password) {
@@ -33,23 +61,10 @@ const isFormFilled = (req, res, next) => {
   next();
 };
 
-// const isCorrectPassword = (req, res, next) => {
-//   const { username, password } = req.body;
-//   if (bcrypt.compareSync(password, user.password)) {
-//     req.session.currentUser = user;
-//     res.redirect('/userHome');
-//   } else {
-//     if (username) {
-//       req.flash('errorDataForm', username);
-//     }
-//     req.flash('errorEmailData', 'Incorrect password');
-//     res.redirect('/auth/login');
-//   }
-//   next();
-// };
-
 module.exports = {
   isLoggedIn,
   isNotLoggedIn,
+  isCorrectPasswordFormat,
+  isCorrectEmailFormat,
   isFormFilled
 };
