@@ -4,29 +4,35 @@
 
 <form action="/auth/signup" method="POST">
 
-<label for="username">Username</label>
-<input type="text" name="username" id="username" required placeholder="Username"> 
-
-<label for="email">Email</label>
-<input type="text" name="email" id="email" required placeholder="email"> 
-
-<label for="password">Password</label>
-<input type="password" name="password" id="password" required placeholder="Password">
-
-<label for="location">Location</label>
-<input type="text" name="location" id="location" required placeholder="Location">
-
-{{!-- <label for="picture">Profile picture</label>
-<input type="text" name="location" id="location" required placeholder="Location"> --}}
+{{#if formData.length}}
+  {{#each formData}}
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" required placeholder="Username" value="{{this.username}}"> 
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" required placeholder="email" value="{{this.email}}"> 
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required placeholder="Password">
+    <label for="location">Location</label>
+    <input type="text" name="location" id="location" required placeholder="Location" value="{{this.location}}"> 
+  {{/each}}
+{{else}}
+  <label for="username">Username</label>
+  <input type="text" name="username" id="username" required placeholder="Username"> 
+  <label for="email">Email</label>
+  <input type="text" name="email" id="email" required placeholder="email"> 
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" required placeholder="Password">
+  <label for="location">Location</label>
+  <input type="text" name="location" id="location" required placeholder="Location"> 
+{{/if}}
 
 <button type="submit">Sign Up</button>
 
 </form>
 
-
-{{#if formData.length}}
+{{#if passwordformat.length}}
 <p class="validation">
-  {{#each formData}}{{this}}{{/each}}
+  {{#each passwordformat}}{{this}}{{/each}}
 </p>
 {{/if}}
 

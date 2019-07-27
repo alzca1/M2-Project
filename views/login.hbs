@@ -5,10 +5,10 @@
 <label for="username">Username</label>
 {{#if formData.length}}
   {{#each formData}}
-    <input type="text" name="username" id="username"  required placeholder="Username" value="{{this}}"> 
+    <input type="text" name="username" id="username"   placeholder="Username" value="{{this}}"> 
   {{/each}}
 {{else}}
-  <input type="text" name="username" id="username"  required placeholder="Username"> 
+  <input type="text" name="username" id="username"  placeholder="Username"> 
 {{/if}}
 
 <label for="password">Password</label>
@@ -28,5 +28,11 @@
 {{#if emailData.length}}
 <p class="validation">
   {{#each emailData}}{{this}}{{/each}}
+</p>
+{{/if}}
+
+{{#if usernameExistent.length}}
+<p class="validation">
+  {{#each usernameExistent}}{{this}}{{/each}}
 </p>
 {{/if}}
