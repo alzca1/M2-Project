@@ -1,1 +1,28 @@
-<h1>Welcome user</h1>
+<section id="private-main">
+
+  <div>
+    <p>Welcome</p>
+    <h1>{{currentUser.username}}</h1>
+  </div>
+
+  <section class="search-bar">
+    <form action="/searchResults" method="GET">
+      <label for="artist"></label>
+      <input type="text" name="artist" id="artist" placeholder="Looking for an artist!">
+      <button type="submit">OO</button>
+    </form>
+  </section>
+
+  <section class="covers">
+    <h2>My Playlists</h2>
+    <article class="cover-article">
+      <div>
+        <img src="" alt="">
+      </div>
+      <h3>NAME</h3>
+      <p>description</p>
+    </article>
+  </section>
+
+  {{> userNavbar}}
+</section>

@@ -1,0 +1,21 @@
+<section class="search-results">
+  <header>
+    <a href="/userHome">go back</a>
+    <h3>"{{artist}}" in Artists</h3>
+  </header>
+  <div></div>
+  {{#each artists}}
+    <article>
+      {{#if this.images.0.url}}
+        <img src="{{this.images.0.url}}" alt="artist photo">
+      {{else}}
+        <img src="./images/man-4-400.jpg" alt="artist photo">
+      {{/if}}
+      <div>
+        <h3>{{this.name}}</h3>
+        <a href="/albums/{{this.id}}">View albums</a>
+      </div>
+    </article>
+  {{/each}}
+  {{> userNavbar}}
+</section>
