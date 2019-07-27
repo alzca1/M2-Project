@@ -1,6 +1,6 @@
 <section class="search-results">
   <header>
-    <a href="/userHome">go back</a>
+    <a href="javascript: history.go(-1)">go back</a>
     <h3>"{{artist}}" in Artists</h3>
   </header>
   <div></div>
@@ -13,7 +13,7 @@
       {{/if}}
       <div>
         <h3>{{this.name}}</h3>
-        <a href="/albums/{{this.id}}">View albums</a>
+        <a href="/artist/{{this.id}}">View albums</a>
       </div>
     </article>
   {{/each}}
