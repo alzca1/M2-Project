@@ -1,0 +1,17 @@
+<section class="playlist-page">
+  <header>
+    <a href="javascript: history.go(-1)">go back</a>
+    <h3>"{{artist}}" in Playlist</h3>
+  </header>
+ 
+  {{#each playlists}}
+    <article>
+      
+      <div>
+        <h3>{{this.name}}</h3>
+        <a href="/artist/{{this.id}}">View albums</a>
+      </div>
+    </article>
+  {{/each}}
+  {{> userNavbar}}
+</section>

@@ -19,6 +19,7 @@ const artistRouter = require('./routes/artist');
 const albumRouter = require('./routes/album');
 const apiRouter = require('./routes/api');
 const playlistRouter = require('./routes/playlistDetails');
+const playlistCollectionRouter = require('./routes/playlistCollection');
 
 const app = express();
 
@@ -69,6 +70,7 @@ app.use('/artist', artistRouter);
 app.use('/album', albumRouter);
 app.use('/api', apiRouter);
 app.use('/playlistDetails', playlistRouter);
+app.use('/playlistCollection', playlistCollectionRouter);
 
 // -- 404 and error handler
 
