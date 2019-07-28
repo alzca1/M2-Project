@@ -20,7 +20,7 @@ const albumRouter = require('./routes/album');
 const apiRouter = require('./routes/api');
 const playlistRouter = require('./routes/playlistDetails');
 const playlistCollectionRouter = require('./routes/playlistCollection');
-
+const playlistSongCollectionRouter = require('./routes/playlistSongCollection')
 const app = express();
 
 mongoose.connect('mongodb://localhost/spotypooh', {
@@ -71,6 +71,8 @@ app.use('/album', albumRouter);
 app.use('/api', apiRouter);
 app.use('/playlistDetails', playlistRouter);
 app.use('/playlistCollection', playlistCollectionRouter);
+app.use('/playlistSongCollection', playlistSongCollectionRouter);
+
 
 // -- 404 and error handler
 
