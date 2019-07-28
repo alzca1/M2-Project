@@ -63,7 +63,7 @@ router.get('/login', (req, res, next) => {
     usernameExistent: req.flash('errorUserExistent'),
     formData: req.flash('errorDataForm')
   };
-  console.log(data);
+ 
   res.render('login', data);
 });
 

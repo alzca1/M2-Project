@@ -57,6 +57,11 @@ const userSchema = new Schema({
   tracks:
     [{
       trackId: String
+    }],
+  playlists:
+    [{
+      type: ObjectId,
+      ref: 'Playlist'
     }]
 
 });

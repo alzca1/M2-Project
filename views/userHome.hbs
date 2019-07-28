@@ -8,21 +8,45 @@
   <section class="search-bar">
     <form action="/searchResults" method="GET">
       <label for="artist"></label>
-      <input type="text" name="artist" id="artist" placeholder="Looking for an artist!">
+      <input type="text" name="artist" id="artist" placeholder="Looking for an artist!" required>
       <button type="submit">OO</button>
     </form>
   </section>
 
+  
+
   <section class="covers">
     <h2>My Playlists</h2>
+    <div class="playlist-slider">
+      {{#each playlists}}
     <article class="cover-article">
       <div>
         <img src="" alt="">
       </div>
-      <h3>NAME</h3>
+      <h3>{{name}}</h3>
       <p>description</p>
+      <button id="{{_id}}">go</button>
     </article>
+     {{/each}}
+    </div>
+   
+  
+   
+   <a class="add-playlist" href="#0">+</a>
   </section>
+
 
   {{> userNavbar}}
 </section>
+
+<section class="playlist-collection">
+  <form class="playlist-form">
+    <label for="name">name</label>
+    <input type="text" name="name" id="name">
+    <button class="playlist-create" type="submit">Add playlist</button>
+  </form>
+
+</section>
+
+
+<script src="../javascripts/main.js"></script>

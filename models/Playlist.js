@@ -10,11 +10,6 @@ const playlistSchema = new Schema({
     required: true,
     unique: true
   },
-  owner:
-    [{
-      type: ObjectId,
-      ref: 'User'
-    }],
   images:
     [{
       type: String

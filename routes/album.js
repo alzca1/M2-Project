@@ -12,7 +12,6 @@ router.get('/:id', async (req, res, next) => {
     const newData = await spotifyApi.getAlbums([id]);
     const tracks = data.body.items;
     const albumData = newData.body.albums[0];
-    // console.log(albumData.artists);
     res.render('album', { tracks, albumData });
   } catch (error) {
     next(error);

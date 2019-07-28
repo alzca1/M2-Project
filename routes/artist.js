@@ -19,6 +19,7 @@ router.get('/:id', async (req, res, next) => {
     // console.log(data.body.items);
     const infoArtist = artistData.body;
     const albums = data.body.items;
+
     res.render('artist', { albums, infoArtist });
   } catch (error) {
     next(error);
