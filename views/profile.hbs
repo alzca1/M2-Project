@@ -1,1 +1,76 @@
-<h1>Profile page</h1>
+
+<section id="profile">
+  <header>
+    <div>
+      {{!-- <img src="" alt=""> --}}
+    </div>
+    <a href="/">Go back</a>
+    <h1>{{currentUser.username}} Profile page</h1>
+  </header>
+
+  <section class="profile-stats">
+    <ul>
+      <li>Followers: {{currentUser.followers.length}}</li>
+      <li>Followings: {{currentUser.followed.length}}</li>
+      <li><a href="/playlistCollection">Playlists: {{currentUser.playlists.length}}</a></li>
+    </ul>
+  </section>
+  <section class="profile-info">
+    <ul>
+      <li>{{currentUser.location}}</li>
+      <li>{{currentUser.email}}</li>
+      <li>Artists: {{currentUser.artists.length}}</li>
+      <li>Albums: {{currentUser.albums.length}}</li>
+      <li>Tracks: {{currentUser.tracks.length}}</li>
+    </ul>
+  </section>
+
+</section>
+
+  <form action="/profile/update" method="POST">
+    {{#if formData.length}}
+      {{#each formData}}
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" required placeholder="email" value="{{this.email}}"> 
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required placeholder="Password">
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location" required placeholder="Location" value="{{this.location}}"> 
+      {{/each}}
+    {{else}}
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" required placeholder="email"> 
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required placeholder="Password">
+      <label for="location">Location</label>
+      <input type="text" name="location" id="location" required placeholder="Location"> 
+    {{/if}}
+    <button type="submit">Sign Up</button>
+  </form>
+
+  {{#if passwordformat.length}}
+  <p class="validation">
+    {{#each passwordformat}}{{this}}{{/each}}
+  </p>
+  {{/if}}
+
+  {{#if usernameExistent.length}}
+  <p class="validation">
+    {{#each usernameExistent}}{{this}}{{/each}}
+  </p>
+  {{/if}}
+
+  {{#if emailformat.length}}
+  <p class="validation">
+    {{#each emailformat}}{{this}}{{/each}}
+  </p>
+  {{/if}}
+
+  {{#if emailExistent.length}}
+  <p class="validation">
+    {{#each emailExistent}}{{this}}{{/each}}
+  </p>
+  {{/if}}
+
+
+

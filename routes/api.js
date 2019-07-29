@@ -14,7 +14,7 @@ router.post('/playlist', /* isFormFilled, */ async (req, res, next) => {
 
     const playlistId = playlist._id;
     const userId = req.session.currentUser._id;
-    await User.findByIdAndUpdate(userId, { $push: { playlists: playlistId } });
+    await User.findByIdAndUpdate(userId, { $push: { playlists: playlistId } }, { new: true });
     // const data = {
     //   messages: req.flash('errorDuplicateTitle'),
     //   recipe
