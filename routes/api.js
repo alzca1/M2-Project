@@ -10,6 +10,15 @@ const User = require('../models/User');
 router.post('/playlist', /* isFormFilled, */ async (req, res, next) => {
   const { name } = req.body;
   try {
+    const user = req.session.currentUser;
+    const newUser = await User.findById(user._id).populate('playlists');
+    newUser.playlists.forEach((elem) => {
+      if (elem.name === name) {
+        console.log(elem.name);
+        return res.json({ message: 'Playlist name already exists' });
+      }
+    });
+
     const playlist = await Playlist.create({ name });
 
     const playlistId = playlist._id;
@@ -20,22 +29,6 @@ router.post('/playlist', /* isFormFilled, */ async (req, res, next) => {
     //   recipe
     // };
     res.json(playlist);
-  } catch (error) {
-    next(error);
-  }
-});
-
-// Tenemos problemas para renderizar esto!!!
-router.post('/playlist/:id/go', /* isFormFilled, */ async (req, res, next) => {
-  const { id } = req.params;
-  try {
-    const data = await Playlist.findById(id);
-
-    // const data = {
-    //   messages: req.flash('errorDuplicateTitle'),
-    //   recipe
-    // };
-    res.render('/playlistDetails', { data });
   } catch (error) {
     next(error);
   }

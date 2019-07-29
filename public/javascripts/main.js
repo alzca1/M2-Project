@@ -33,18 +33,27 @@ const main = () => {
     const response = await axios.post('/api/playlist', playlist);
     form.reset();
     const newPlaylist = response.data;
-    const article = document.createElement('article');
-    const button = document.createElement('button');
+    console.log(response.data);
 
-    button.setAttribute('id', newPlaylist._id);
-    button.innerText = 'go';
-
-    const p = document.createElement('p');
-    p.innerText = `${newPlaylist.name}`;
-
-    article.appendChild(p);
-    article.appendChild(button);
-    playlistCollection.appendChild(article);
+    if (response.data.message) {
+      const errorMessage = document.querySelector('.playlist-collection');
+      const p = document.createElement('p');
+      p.innerText = response.data.message;
+      errorMessage.appendChild(p);
+      setTimeout(() => {
+        errorMessage.removeChild(p);
+      }, 3000);
+    } else {
+      const article = document.createElement('article');
+      const button = document.createElement('button');
+      button.setAttribute('id', newPlaylist._id);
+      button.innerText = 'go';
+      const p = document.createElement('p');
+      p.innerText = `${newPlaylist.name}`;
+      article.appendChild(p);
+      article.appendChild(button);
+      playlistCollection.appendChild(article);
+    }
 
     showPlaylist();
   });

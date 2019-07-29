@@ -20,7 +20,7 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', isCorrectPasswordFormat, isCorrectEmailFormat, async (req, res, next) => {
-  const { username, password, email, location/*, picture */ } = req.body;
+  const { username, password, email, location } = req.body;
   const newData = { username, password, email, location };
   try {
     const salt = bcrypt.genSaltSync(saltRounds);
@@ -46,8 +46,7 @@ router.post('/signup', isCorrectPasswordFormat, isCorrectEmailFormat, async (req
       username,
       password: hashedPassword,
       email,
-      location /*,
-      picture */
+      'location.name': location
     });
     req.session.currentUser = newUser;
     res.redirect('/userHome');
@@ -63,7 +62,7 @@ router.get('/login', (req, res, next) => {
     usernameExistent: req.flash('errorUserExistent'),
     formData: req.flash('errorDataForm')
   };
- 
+
   res.render('login', data);
 });
 
