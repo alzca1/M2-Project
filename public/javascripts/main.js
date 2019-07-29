@@ -13,7 +13,7 @@ const main = () => {
         try {
           const id = event.target.id;
           console.log(id);
-          await axios.post(`api/playlist/${id}/go`);
+          await axios.post(`/playlistSongCollection/${id}`);
           // await axios.post(`/api/recipes/${id}/delete`);
         } catch (error) {
           console.log(error);
@@ -30,7 +30,7 @@ const main = () => {
       name: event.srcElement.name.value
 
     };
-    const response = await axios.post('/api/playlist', playlist);
+    const response = await axios.post('/api/playlist/', playlist);
     form.reset();
     const newPlaylist = response.data;
     console.log(response.data);

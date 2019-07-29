@@ -1,6 +1,6 @@
 
 <section id="modify-profile">
-  <form action="/profile/update" method="POST">
+  <form action="/modifyProfile/{{data.user._id}}/edit" method="POST">
     {{#if formData.length}}
       {{#each formData}}
         <label for="email">Email</label>

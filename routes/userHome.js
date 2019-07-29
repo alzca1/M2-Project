@@ -6,9 +6,9 @@ const User = require('../models/User.js');
 
 router.get('/', async (req, res, next) => {
   const userId = req.session.currentUser._id;
-  const user = await User.findById(userId).populate('playlists'); // con populate mongoose busca todas las recetas relacionadas con el user y las trae
+  const newUser = await User.findById(userId).populate('playlists'); // con populate mongoose busca todas las recetas relacionadas con el user y las trae
 
-  res.render('userHome', user);
+  res.render('userHome', newUser);
 });
 
 module.exports = router;
