@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
@@ -24,7 +25,7 @@ const playlistCollectionRouter = require('./routes/playlistCollection');
 const playlistSongCollectionRouter = require('./routes/playlistSongCollection');
 const app = express();
 
-mongoose.connect('mongodb://localhost/spotypooh', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
@@ -35,7 +36,7 @@ app.use(session({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day
   }),
-  secret: 'some-string',
+  secret: process.env.SECRET_SESSION,
   resave: true,
   httpOnly: true,
   saveUninitialized: true,
