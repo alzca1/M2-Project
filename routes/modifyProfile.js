@@ -8,9 +8,11 @@ const { isLoggedIn, isFormFilled, isCorrectPasswordFormat, isCorrectEmailFormat 
 
 const saltRounds = 10;
 
-router.get('/', async (req, res, next) => {
-  const user = req.session.currentUser;
-  const newUser = await User.findById(user._id);
+router.get('/:id', async (req, res, next) => {
+  const { id } = req.params;
+  console.log(id);
+  const user = await User.findById(id);
+  console.log(user);
   const data = {
     messages: req.flash('errorFormNotFilled'),
     usernameExistent: req.flash('errorUserExistent'),
@@ -18,9 +20,9 @@ router.get('/', async (req, res, next) => {
     passwordformat: req.flash('errorPasswordFormat'),
     formData: req.flash('errorDataForm'),
     emailformat: req.flash('errorEmailFormat'),
-    newUser
+    user
   };
-  res.render('profile', { data });
+  res.render('modifyProfile', { data });
 });
 
 // router.post('/update', async (req, res, next) => {
