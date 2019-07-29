@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 
-const spotifyApi = require('../credentials/credentials.js');
+// const spotifyApi = require('../credentials/credentials.js');
 const Playlist = require('../models/Playlist');
 const User = require('../models/User');
 
@@ -35,7 +35,6 @@ router.post('/playlist/:id/go', /* isFormFilled, */ async (req, res, next) => {
     //   messages: req.flash('errorDuplicateTitle'),
     //   recipe
     // };
-    console.log(data);
     res.render('/playlistDetails', { data });
   } catch (error) {
     next(error);

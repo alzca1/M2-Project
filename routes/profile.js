@@ -9,16 +9,22 @@ const User = require('../models/User.js');
 
 router.get('/', async (req, res, next) => {
   const user = req.session.currentUser;
-  console.log(user);
-  const data = {
-    messages: req.flash('errorFormNotFilled'),
-    usernameExistent: req.flash('errorUserExistent'),
-    emailExistent: req.flash('errorEmailExistent'),
-    passwordformat: req.flash('errorPasswordFormat'),
-    formData: req.flash('errorDataForm'),
-    emailformat: req.flash('errorEmailFormat')
-  };
-  res.render('profile', data);
+  const newUser = await User.findById(user._id);
+  // const data = {
+  //   messages: req.flash('errorFormNotFilled'),
+  //   usernameExistent: req.flash('errorUserExistent'),
+  //   emailExistent: req.flash('errorEmailExistent'),
+  //   passwordformat: req.flash('errorPasswordFormat'),
+  //   formData: req.flash('errorDataForm'),
+  //   emailformat: req.flash('errorEmailFormat'),
+  //   newUser
+  // };
+  res.render('profile', { newUser });
+});
+
+router.post('/logout', /* isNotLoggedIn, */ (req, res, next) => {
+  delete req.session.currentUser;
+  res.redirect('/');
 });
 
 // router.post('/update', async (req, res, next) => {

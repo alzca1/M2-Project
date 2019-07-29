@@ -5,24 +5,30 @@
       {{!-- <img src="" alt=""> --}}
     </div>
     <a href="/">Go back</a>
-    <h1>{{currentUser.username}} Profile page</h1>
+    <h1>{{data.newUser.username}} Profile page</h1>
   </header>
 
   <section class="profile-stats">
     <ul>
-      <li>Followers: {{currentUser.followers.length}}</li>
-      <li>Followings: {{currentUser.followed.length}}</li>
-      <li><a href="/playlistCollection">Playlists: {{currentUser.playlists.length}}</a></li>
+      <li>Followers: {{newUser.followers.length}}</li>
+      <li>Followings: {{newUser.followed.length}}</li>
+      <li><a href="/playlistCollection">Playlists: {{newUser.playlists.length}}</a></li>
     </ul>
   </section>
   <section class="profile-info">
     <ul>
-      <li>{{currentUser.location}}</li>
-      <li>{{currentUser.email}}</li>
-      <li>Artists: {{currentUser.artists.length}}</li>
-      <li>Albums: {{currentUser.albums.length}}</li>
-      <li>Tracks: {{currentUser.tracks.length}}</li>
+      <li>{{newUser.location}}</li>
+      <li>{{newUser.email}}</li>
+      <li>Artists: {{newUser.artists.length}}</li>
+      <li>Albums: {{newUser.albums.length}}</li>
+      <li>Tracks: {{newUser.tracks.length}}</li>
     </ul>
+  </section>
+  <section>
+    <a href="/modifyProfile/{{newUser._id}}">Edit</a>
+    <form action="/profile/logout" method="POST">
+            <button type="submit">Logout</button>
+          </form>
   </section>
 
 </section>

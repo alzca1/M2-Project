@@ -2,7 +2,7 @@
 
 const isLoggedIn = (req, res, next) => {
   if (req.session.currentUser) {
-    // req.flash('errorFormNotFilled', 'All fields are required');
+    req.flash('errorFormNotFilled', 'All fields are required');
     return res.redirect('/auth/login');
   }
   next();

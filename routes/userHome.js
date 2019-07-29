@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User.js');
-const Playlist = require('../models/Playlist.js');
+// const Playlist = require('../models/Playlist.js');
 
 router.get('/', async (req, res, next) => {
   const userId = req.session.currentUser._id;

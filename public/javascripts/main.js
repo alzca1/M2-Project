@@ -4,15 +4,17 @@ const main = () => {
   const form = document.querySelector('.playlist-form');
   const playlistCollection = document.querySelector('.playlist-slider');
 
-  //   //show playlist
+  // show playlist
   const showPlaylist = () => {
     const selectPlaylist = document.querySelectorAll('article button');
     selectPlaylist.forEach((button) => {
       button.addEventListener('click', async (event) => {
+        console.log(event);
         try {
           const id = event.target.id;
-          await axios.post(`/api/playlist/${id}/go`);
-          await axios.post(`/api/recipes/${id}/delete`);
+          console.log(id);
+          await axios.post(`api/playlist/${id}/go`);
+          // await axios.post(`/api/recipes/${id}/delete`);
         } catch (error) {
           console.log(error);
         }
