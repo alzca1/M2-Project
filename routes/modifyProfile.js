@@ -25,6 +25,23 @@ router.get('/:id', async (req, res, next) => {
   res.render('modifyProfile', { data });
 });
 
+router.post('/:id/edit', async (req, res, next) => {
+  const { username, password, email, location } = req.body;
+  const { id } = req.params;
+  console.log(req.body);
+  try {
+    await User.findOneAndUpdate(id, {
+      username,
+      password,
+      email,
+      'location.name': location
+    });
+    res.redirect('/profile');
+  } catch (error) {
+    next(error);
+  }
+});
+
 // router.post('/update', async (req, res, next) => {
 //   const { username, password, email, location/*, picture */ } = req.body;
 //   const newData = { username, password, email, location };
