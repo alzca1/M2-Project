@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 
-const spotifyApi = require('../credentials/credentials.js');
+const spotifyApi = require('../config/credentials.js');
 
 router.get('/:id', async (req, res, next) => {
   const id = req.params.id;

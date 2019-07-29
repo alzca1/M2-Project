@@ -1,8 +1,11 @@
 
 <a href="/">Go back</a>
 
-
-<form action="/auth/signup" method="POST">
+{{!-- <form action="/meme" method="POST" enctype="multipart/form-data">
+  <input type="file" name="photo" />
+  <button type="submit">Add Image</button>
+</form> --}}
+<form action="/auth/signup" method="POST" enctype="multipart/form-data">
 
 {{#if formData.length}}
   {{#each formData}}
@@ -14,6 +17,8 @@
     <input type="password" name="password" id="password" required placeholder="Password">
     <label for="location">Location</label>
     <input type="text" name="location" id="location" required placeholder="Location" value="{{this.location}}"> 
+    <label for="picture">Username</label>
+    <input type="file" name="picture" id="picture" > 
   {{/each}}
 {{else}}
   <label for="username">Username</label>
@@ -24,6 +29,8 @@
   <input type="password" name="password" id="password" required placeholder="Password">
   <label for="location">Location</label>
   <input type="text" name="location" id="location" required placeholder="Location"> 
+    <label for="picture">Username</label>
+    <input type="file" name="picture" id="picture" > 
 {{/if}}
 
 <button type="submit">Sign Up</button>

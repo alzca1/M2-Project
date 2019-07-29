@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 // const Playlist = require('../models/Playlist');
 const User = require('../models/User');
-// const spotifyApi = require('../credentials/credentials.js');
+// const spotifyApi = require('../config/credentials.js');
 
 // router.get('/:id', async (req, res, next) => {
 //   const playlistId = req.params;

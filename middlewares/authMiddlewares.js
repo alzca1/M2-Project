@@ -16,9 +16,10 @@ const isNotLoggedIn = (req, res, next) => {
 };
 
 const isCorrectPasswordFormat = (req, res, next) => {
-  const { username, password, email, location } = req.body;
-  const newData = { username, password, email, location };
+  const { username, password, email, location, picture } = req.body;
+  const newData = { username, password, email, location, picture };
   const passwordRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
+  
   if (!password.match(passwordRegex)) {
     if (newData) {
       req.flash('errorDataForm', newData);
@@ -30,8 +31,8 @@ const isCorrectPasswordFormat = (req, res, next) => {
 };
 
 const isCorrectEmailFormat = (req, res, next) => {
-  const { username, password, email, location } = req.body;
-  const newData = { username, password, email, location };
+  const { username, password, email, location, picture } = req.body;
+  const newData = { username, password, email, location, picture };
   const emailRegex = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
   if (!email.match(emailRegex)) {
     if (newData) {

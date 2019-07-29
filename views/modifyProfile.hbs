@@ -1,6 +1,6 @@
 
 <section id="modify-profile">
-  <form action="/modifyProfile/{{data.user._id}}/edit" method="POST">
+  <form action="/modifyProfile/{{data.user._id}}/edit" method="POST" enctype="multipart/form-data">
     {{#if formData.length}}
       {{#each formData}}
         <label for="email">Email</label>
@@ -8,7 +8,10 @@
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required placeholder="Password">
         <label for="location">Location</label>
-        <input type="text" name="location" id="location" required placeholder="Location" value="{{this.location}}"> 
+        <input type="text" name="location" id="location" required placeholder="Location" value="{{this.location}}">
+        <label for="picture">Profile Picture</label>
+        <input type="file" name="picture" id="picture" > 
+      
       {{/each}}
     {{else}}
       <label for="email">Email</label>
@@ -17,6 +20,9 @@
       <input type="password" name="password" id="password" required placeholder="Password" value="{{data.user.password}}">
       <label for="location">Location</label>
       <input type="text" name="location" id="location" required placeholder="Location" value="{{data.user.location.name}}"> 
+      <label for="picture">Profile Picture</label>
+      <input type="file" name="picture" id="picture" > 
+      
     {{/if}}
     <button type="submit">Update</button>
   </form>

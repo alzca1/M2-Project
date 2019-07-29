@@ -5,6 +5,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/User.js');
 const { isLoggedIn, isFormFilled, isCorrectPasswordFormat, isCorrectEmailFormat } = require('../middlewares/authMiddlewares.js');
+const parser = require('../config/cloudinary');
 
 const saltRounds = 10;
 
@@ -25,16 +26,19 @@ router.get('/:id', async (req, res, next) => {
   res.render('modifyProfile', { data });
 });
 
-router.post('/:id/edit', async (req, res, next) => {
-  const { username, password, email, location } = req.body;
+router.post('/:id/edit', parser.single('picture'), async (req, res, next) => {
+  const { password, email, location } = req.body;
   const { id } = req.params;
+
+  const picture = req.file.secure_url;
+
   console.log(req.body);
   try {
-    await User.findOneAndUpdate(id, {
-      username,
+    await User.findByIdAndUpdate(id, {
       password,
       email,
-      'location.name': location
+      'location.name': location,
+      picture
     });
     res.redirect('/profile');
   } catch (error) {
