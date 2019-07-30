@@ -182,7 +182,7 @@ section.testimonials .button {
 
 }
 
-#login, #sign{
+#login{
   width:100%;
   min-height: 100vh;
   height: auto;
@@ -290,3 +290,14 @@ section.testimonials .button {
     }
   }
 }
+
+#sign {
+  @extend #login;
+
+  .button-form{
+    width:50%;
+  }
+  
+}
+
+

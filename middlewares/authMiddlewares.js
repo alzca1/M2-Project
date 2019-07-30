@@ -2,7 +2,7 @@
 
 const isLoggedIn = (req, res, next) => {
   if (req.session.currentUser) {
-    req.flash('errorFormNotFilled', 'All fields are required');
+    req.flash('errorFormNotFilled', 'There is another user logged in');
     return res.redirect('/auth/login');
   }
   next();
@@ -19,7 +19,7 @@ const isCorrectPasswordFormat = (req, res, next) => {
   const { username, password, email, location, picture } = req.body;
   const newData = { username, password, email, location, picture };
   const passwordRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
-  
+
   if (!password.match(passwordRegex)) {
     if (newData) {
       req.flash('errorDataForm', newData);

@@ -10,18 +10,13 @@ router.get('/:id', async (req, res, next) => {
   const id = req.params.id;
   try {
     const data = await spotifyApi.getAlbumTracks(id);
-    // console.log(data.body);
     const newData = await spotifyApi.getAlbums([id]);
-    // console.log(newData.body);
     const tracks = data.body.items;
 
     const albumData = newData.body.albums[0];
-    // tracks.albumId = albumData.id;
     tracks.forEach((track) => {
       track.albumId = albumData.id;
     });
-    console.log(tracks);
-    // console.log(albumData);
     res.render('album', { tracks, albumData });
   } catch (error) {
     next(error);
@@ -30,15 +25,21 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/:id/like/:albumId', async (req, res, next) => {
   const id = req.params.id;
-  console.log(id);
   const { albumId } = req.params;
   const userId = req.session.currentUser._id;
 
   try {
-    const album = await spotifyApi.getAlbums([id]);
-    // console.log(song.body);
-
-    await User.findByIdAndUpdate(userId, { $push: { tracks: { trackId: id } } }, { new: true });
+    const newUser = await User.findById(userId);
+    let state = false;
+    newUser.tracks.forEach(async (elem) => {
+      if (elem.trackId === id) {
+        state = true;
+        await User.findByIdAndUpdate(userId, { $pull: { tracks: { trackId: id } } });
+      }
+    });
+    if (!state) {
+      await User.findByIdAndUpdate(userId, { $push: { tracks: { trackId: id } } }, { new: true });
+    }
     res.redirect(`/album/${albumId}`);
   } catch (error) {
     next(error);

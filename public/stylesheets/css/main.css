@@ -212,3 +212,6 @@ section.testimonials .button {
       #login .login-sign-info .register p, #sign .login-sign-info .register p {
         display: inline;
         margin-right: 5px; }
+
+#sign .button-form {
+  width: 50%; }
