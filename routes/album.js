@@ -3,21 +3,30 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const Playlist = require('../models/Playlist');
 
 const spotifyApi = require('../config/credentials.js');
 
 router.get('/:id', async (req, res, next) => {
   const id = req.params.id;
   try {
+    const userId = req.session.currentUser._id;
+    const user = await User.findById(userId).populate('playlists');
     const data = await spotifyApi.getAlbumTracks(id);
     const newData = await spotifyApi.getAlbums([id]);
     const tracks = data.body.items;
+    var myTracks = tracks;
 
     const albumData = newData.body.albums[0];
-    tracks.forEach((track) => {
+    myTracks.forEach((track) => {
+      track.myPlaylist = user.playlists;
       track.albumId = albumData.id;
     });
-    res.render('album', { tracks, albumData });
+    console.log(myTracks);
+    user.playlists.forEach((playlist) => {
+      playlist.albumId = albumData.id;
+    });
+    res.render('album', { myTracks, albumData, user });
   } catch (error) {
     next(error);
   }
@@ -40,6 +49,18 @@ router.post('/:id/like/:albumId', async (req, res, next) => {
     if (!state) {
       await User.findByIdAndUpdate(userId, { $push: { tracks: { trackId: id } } }, { new: true });
     }
+    res.redirect(`/album/${albumId}`);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/:id/add/:albumId/to/:songId', async (req, res, next) => {
+  const id = req.params.id;
+  const albumId = req.params.albumId;
+  const songId = req.params.songId;
+  try {
+    await Playlist.findByIdAndUpdate(id, { $push: { tracks: { trackId: songId } } }, { new: true });
     res.redirect(`/album/${albumId}`);
   } catch (error) {
     next(error);

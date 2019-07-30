@@ -14,7 +14,7 @@ const playlistSchema = new Schema({
     }],
   tracks:
     [{
-      type: String
+      trackId: String
     }]
 
 });

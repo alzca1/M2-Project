@@ -15,7 +15,7 @@
 
 
   <section class="track-list">
-    {{#each tracks}}
+    {{#each myTracks}}
       <article>
         <p>{{this.name}}</p>
         <p>{{this.id}}</p>
@@ -24,23 +24,36 @@
         </audio>
         <ul>
           <li>
-          <form action="/album/{{this.id}}/like/{{this.albumId}}" method="POST">
-       <button class="btn-like" type="submit">Like</button>
-      </form>
-      </li>
+            <form action="/album/{{this.id}}/like/{{this.albumId}}" method="POST">
+              <button class="btn-like" type="submit">Like</button>
+            </form>
+          </li>
           <li> <button class="share-button">share</button></li>
           <li> <a href="#0" class="add-button">add</a></li></ul>
+          {{#each this.myPlaylist}}
+            <p>{{../name}}</p>
+            <li>{{this.name}}
+              <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}" method="POST">
+                <button class="btn-add" type="submit">add song</button>
+              </form>
+            </li>
+          {{/each}}
       </article>
     {{/each}}
   </section>
-  <p>{{albumData.id}}</p>
-
 </section>
 
-<section class="playlist-disclose">
+<section class="add-to-playlists">
   <ul>
-    <li><button id="{{_id}}">playlist1</button></li>
+    {{#each user.playlists}}
+      <li>{{this.name}}
+        <form action="/album/{{this.id}}/add/{{this.albumId}}" method="POST">
+          <button class="btn-add" type="submit">add song</button>
+        </form>
+      </li>
+    {{/each}}
   </ul>
 </section>
 {{> userNavbar}}
+
 
