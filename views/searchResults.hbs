@@ -1,21 +1,29 @@
 <section class="search-results">
-  <header>
-    <a href="javascript: history.go(-1);location.replace(document.referrer)">go back</a>
-    <h3>"{{artist}}" in Artists</h3>
-  </header>
-  <div></div>
-  {{#each artists}}
-    <article>
-      {{#if this.images.0.url}}
-        <img src="{{this.images.0.url}}" alt="artist photo">
-      {{else}}
-        <img src="./images/man-4-400.jpg" alt="artist photo">
-      {{/if}}
-      <div>
-        <h3>{{this.name}}</h3>
-        <a href="/artist/{{this.id}}">View albums</a>
-      </div>
-    </article>
-  {{/each}}
+  <a class="go-back" href="javascript: history.go(-1);location.replace(document.referrer)">
+    <img src="../images/arrow-left-color.png">
+  </a>
+
+  <div class="title">
+    <p>Looking for</p>
+    <h1>"{{artist}}" in Artists</h1>
+  </div>
+
+  <section class="list-elements">
+    {{#each artists}}
+      <article>
+        <div class="image-wrapper">
+          {{#if this.images.0.url}}
+            <img src="{{this.images.0.url}}" alt="artist photo">
+          {{else}}
+            <img src="./images/man-4-400.jpg" alt="artist photo">
+          {{/if}}
+        </div>
+        <div class="info-wrapper">
+          <h2>{{this.name}}</h2>
+          <a class="view-more" href="/artist/{{this.id}}"><div></div></a>
+        </div>
+      </article>
+    {{/each}}
+  </section>
   {{> userNavbar}}
 </section>

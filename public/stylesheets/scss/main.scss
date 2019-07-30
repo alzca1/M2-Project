@@ -1,6 +1,7 @@
 
 
 $main: #80713E; 
+$colorBackground: #FFE37D;
 
 @mixin flex-start($direction: row) { 
   display: flex; 
@@ -67,7 +68,11 @@ body {
 
 h1 {}
 
-h2 {}
+h2 {
+  font-size: 16px;
+  width:auto;
+  color: $main;
+}
 
 h3 {}
 
@@ -293,11 +298,317 @@ section.testimonials .button {
 
 #sign {
   @extend #login;
-
-  .button-form{
-    width:50%;
-  }
-  
+  @include flex-start($direction: column);
 }
+
+#private-main{
+  width:100%;
+  height:auto;
+  min-height:100vh;
+  background-color: rgba(255, 227, 125, 0.1);
+
+  .title{
+    width:78%;
+    margin: 0 auto;
+    // text-align: center;
+    color: $main;
+    padding: 30px 0;
+
+    p{
+      font-size:10px;
+    }
+
+    h1{
+      font-size: 25px;
+      margin: 0;
+    }
+  }
+
+  .search-bar{
+    width:80%;
+    height: 50px;
+    margin:0 auto;
+
+    form{
+      background-color: white;
+      width: 100%;
+      height:50px;
+      border-radius: 10px;
+      @include shadow-yellow;
+      border: none;
+      font-size:16px;
+      color: $main;
+      z-index:1;
+      @include flex-start($direction: row);
+
+
+      input{
+        width: 80%;
+        height: 50px;
+        padding: 0 0 0 30px;
+        background: rgba(255, 255, 255, 0);
+        border: none;
+        font-size:14px;
+        color: $main;
+
+      }
+      button{
+        width:20%;
+        height: 50px;
+
+        img{
+          height: 20px;
+          width: auto;
+        }
+      }
+    }
+  }
+  .covers{
+    width:80%;
+    height:180px;
+    margin:25px 0 20px 10%;
+    // background-color: red;
+    position:relative;
+
+    .covers-text{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      width:100%;
+      
+      h2{
+        font-size: 16px;
+        width:auto;
+        color: $main;
+      }
+      .all-covers{
+        top:0;
+        width:auto;
+        font-size:12px;
+        text-decoration: none;
+        color: rgba(0,0,0, 0.35);
+      }
+    }
+    .playlist-slider{
+      width: auto;
+      height:120px;
+      display:flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 10px;
+
+      .cover-article{
+        width:110px;
+        height:140px;
+        border-radius:10px;
+        background-color: #FF8178;
+        margin-right: 10px;
+        @include shadow-yellow;
+
+        a{
+          width:110px;
+          height: 140px;
+          position: relative;
+          display:block;
+
+          h3{
+            font-size: 12px;
+            color:white;
+            text-decoration: none;
+            position: absolute;
+            bottom:0px;
+            left:10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer{
+  width:100%;
+  height:60px;
+  position: fixed;
+  bottom:0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: white;
+  z-index:2;
+  @include shadow-yellow;
+
+  nav{
+    width:100%;
+    height:60px;
+    background-color: white;
+    
+    ul{
+      display:flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width:100%;
+      height:60px;
+      padding:0;
+
+      li{
+        list-style: none;
+      }
+    }
+  }
+}
+
+.playlist-collection{
+  width:100%;
+  height:100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index:1;
+  position: fixed;
+  left:-100%;
+  top:0;
+  @include flex-center($direction: row);
+  //transition: all 0.5s ease-out;
+
+  .visible{
+    left:0;
+  }
+
+  .hidden-form{
+    width:80%;
+    height:auto;
+    margin-top: -150px;      
+      
+    .playlist-form{
+      background-color: white;
+      width: 100%;
+      height:60px;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 20px 77px -9px rgba(171, 135, 5,0.75);
+      -moz-box-shadow: 0px 20px 77px -9px rgba(171, 135, 5,0.75);
+      box-shadow: 0px 20px 77px -9px rgba(171, 135, 5,0.75);  
+      border: none;
+      font-size:16px;
+      color: $main;
+      z-index:1;
+      @include flex-start($direction: row);
+      
+      input{
+        width: 80%;
+        height: 60px;
+        padding: 0 0 0 30px;
+        background: rgba(255, 255, 255, 0);
+        border: none;
+        font-size:14px;
+        color: $main;
+        
+      }
+      button{
+        width:20%;
+        height: 60px;
+        background-color: #FFE37D;
+        
+        img{
+          height: 20px;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+.search-results{
+  @extend #private-main;
+
+  .go-back{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 60px;
+    height: 50px;
+    background-color: white;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    @include flex-center(column);
+
+    img{
+      height: 20px;
+      margin-left: -5px;
+    }
+  }
+
+  .title{
+    width:78%;
+    margin: 0 auto;
+    // text-align: center;
+    color: $main;
+    padding: 30px 0 30px 30px;
+
+    p{
+      font-size:10px;
+    }
+
+    h1{
+      font-size: 25px;
+      margin: 0;
+    }
+  }
+  .list-elements{
+    width:80%;
+    margin:20px auto;
+
+    article{
+      width:100%;
+      height:100px;
+      border-radius: 10px;
+      background-color: white;
+      margin-bottom:10px;
+      -webkit-box-shadow: 0px 20px 77px -9px rgba(171, 135, 5,0.75);
+      -moz-box-shadow: 0px 20px 77px -9px rgba(171, 135, 5,0.75);
+      box-shadow: 0px 20px 77px -9px rgba(171, 135, 5,0.75);  
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      z-index:1;
+
+      .image-wrapper{
+        width:80px;
+        height:80px;
+        margin-left:10px;
+        border-radius: 10px;
+        overflow: hidden;
+        @include flex-center($direction: row);
+
+        img{
+          width:100%;
+          height:auto;
+        }
+      }
+      .info-wrapper{
+        margin-left: 10px;
+        width: calc(100% - 110px);
+
+        h2{
+          font-size: 14px;
+          width:auto;
+          color: $main;
+        }
+
+        a{
+          position: absolute;
+          bottom:10px;
+          right:10px;
+          width: 26px;
+          height: 26px;
+          border-radius:13px;
+          background-color: #FF8178;
+          -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.20);
+          -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.20);
+          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.20)
+        }
+      }
+    }
+  }
+}
+  
+
 
 

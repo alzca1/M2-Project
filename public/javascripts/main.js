@@ -2,6 +2,7 @@
 
 const main = () => {
   const form = document.querySelector('.playlist-form');
+  const anchor = document.querySelector('.add-playlist');
   const playlistCollection = document.querySelector('.playlist-slider');
 
   // show playlist
@@ -45,6 +46,8 @@ const main = () => {
     } else {
       const article = document.createElement('article');
       const button = document.createElement('button');
+
+      article.setAttribute('class', 'cover-article');
       button.setAttribute('id', newPlaylist._id);
       button.innerText = 'go';
       const p = document.createElement('p');
@@ -55,6 +58,13 @@ const main = () => {
     }
 
     showPlaylist();
+  });
+
+  anchor.addEventListener('click', async (event) => {
+    event.preventDefault();
+
+    const section = document.querySelector('.playlist-collection');
+    section.classList.toggle('visible');
   });
 };
 
