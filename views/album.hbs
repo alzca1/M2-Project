@@ -1,7 +1,7 @@
 <section class="tracks">
 
   <header>
-    <a href="javascript: history.go(-1);location.replace(document.referrer">go back</a>
+    <a href="javascript: history.go(-1);location.replace(document.referrer)">go back</a>
 
     <h2>{{albumData.name}}</h2>
     <h2>{{albumData.release_date}}</h2>
@@ -18,16 +18,22 @@
     {{#each tracks}}
       <article>
         <p>{{this.name}}</p>
+        <p>{{this.id}}</p>
         <audio controls name="media">
           <source src="{{this.preview_url}}" type="audio/mpeg">
         </audio>
         <ul>
-          <li><button class="internal-like-button">like</button></li>
+          <li>
+          <form action="/album/{{this.id}}/like/{{this.albumId}}" method="POST">
+       <button class="btn-like" type="submit">Like</button>
+      </form>
+      </li>
           <li> <button class="share-button">share</button></li>
           <li> <a href="#0" class="add-button">add</a></li></ul>
       </article>
     {{/each}}
   </section>
+  <p>{{albumData.id}}</p>
 
 </section>
 

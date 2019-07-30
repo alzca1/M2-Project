@@ -1,9 +1,10 @@
 <section class="playlist-page">
   <header>
-    <a href="javascript: history.go(-1);location.replace(document.referrer; location.replace(document.referrer)">go back</a>
+    <a href="/userHome">go back</a>
     <h3>"{{artist}}" in Playlist</h3>
   </header>
  
+ <section class="playlist-scrolldown">
   {{#each playlists}}
     <article>
       
@@ -11,7 +12,24 @@
         <h3>{{this.name}}</h3>
         <a href="/playlistSongCollection/{{this.id}}">View playlist</a>
       </div>
+      <form action="/playlistCollection/{{this.id}}/delete" method="POST">
+       <button class="btn-delete" type="submit">Delete</button>
+      </form>
     </article>
   {{/each}}
+  </section>
   {{> userNavbar}}
 </section>
+
+<section class="playlist-scrolldown-collection">
+  <form class="playlist-scrolldown-form">
+    <label for="name">name</label>
+    <input type="text" name="name" id="name">
+    <button class="playlist-create" type="submit">Add playlist</button>
+  </form>
+  
+</section>
+
+
+
+<script src="../javascripts/mainPlaylist.js"></script>
