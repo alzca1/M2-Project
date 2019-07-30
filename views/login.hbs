@@ -1,37 +1,51 @@
 <section id="login">
-  <a href="/">Go back</a>
+  <a class="go-back" href="/"><img src="../images/arrow-left-color.png"></a>
 
-  {{#if messages.length}}
-  <p class="validation">
-    {{#each messages}}{{this}}{{/each}}
-  </p>
-  {{/if}}
+  <section class="login-sign-info">
+    <section class="logo">
+      {{!-- <img src="" alt=""> --}}
+    </section>
 
-  {{#if emailData.length}}
-  <p class="validation">
-    {{#each emailData}}{{this}}{{/each}}
-  </p>
-  {{/if}}
-
-  {{#if usernameExistent.length}}
-  <p class="validation">
-    {{#each usernameExistent}}{{this}}{{/each}}
-  </p>
-  {{/if}}
-  
-  <form action="/auth/login" method="POST">
-    <label for="username">Username</label>
-    {{#if formData.length}}
-      {{#each formData}}
-        <input type="text" name="username" id="username"   placeholder="Username" value="{{this}}"> 
-      {{/each}}
-    {{else}}
-      <input type="text" name="username" id="username"  placeholder="Username"> 
+    {{#if messages.length}}
+    <p class="validation">
+      {{#each messages}}{{this}}{{/each}}
+    </p>
     {{/if}}
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" placeholder="Password">
-    <button type="submit">Login</button>
-  </form>
+
+    {{#if emailData.length}}
+    <p class="validation">
+      {{#each emailData}}{{this}}{{/each}}
+    </p>
+    {{/if}}
+
+    {{#if usernameExistent.length}}
+    <p class="validation">
+      {{#each usernameExistent}}{{this}}{{/each}}
+    </p>
+    {{/if}}
+    
+    <form action="/auth/login" method="POST">
+      <div>
+        <label for="username">Username</label>
+        {{#if formData.length}}
+          {{#each formData}}
+            <input type="text" name="username" id="username"   placeholder="Username" value="{{this}}"> 
+          {{/each}}
+        {{else}}
+          <input type="text" name="username" id="username"  placeholder="Username"> 
+        {{/if}}
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+      </div>
+      <button class="button-form" type="submit">Login</button>
+    </form>
+    <div class="register">
+      <p>Not register?</p>
+      <a href="/auth/signup">Join us</a>
+    </div>
+  </section>
 
 </section>
 

@@ -57,6 +57,12 @@ const main = () => {
 
     showPlaylist();
   });
+
+  // const input = document.querySelector('#login input');
+  // input.addEventListener('input', async (event) => {
+  //   const label = document.querySelector('#login label');
+
+  // }
 };
 
 window.addEventListener('load', main);

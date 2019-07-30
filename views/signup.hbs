@@ -1,64 +1,87 @@
+<section id="sign">
+  <a class="go-back" href="/"><img src="../images/arrow-left-color.png"></a>
 
-<a href="/">Go back</a>
+  <section class="login-sign-info">
+    <section class="logo">
+      {{!-- <img src="" alt=""> --}}
+    </section>
 
-{{!-- <form action="/meme" method="POST" enctype="multipart/form-data">
-  <input type="file" name="photo" />
-  <button type="submit">Add Image</button>
-</form> --}}
-<form action="/auth/signup" method="POST" enctype="multipart/form-data">
+    {{#if passwordformat.length}}
+      <p class="validation">
+        {{#each passwordformat}}{{this}}{{/each}}
+      </p>
+    {{/if}}
 
-{{#if formData.length}}
-  {{#each formData}}
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username" required placeholder="Username" value="{{this.username}}"> 
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email" required placeholder="email" value="{{this.email}}"> 
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required placeholder="Password">
-    <label for="location">Location</label>
-    <input type="text" name="location" id="location" required placeholder="Location" value="{{this.location}}"> 
-    <label for="picture">Username</label>
-    <input type="file" name="picture" id="picture" > 
-  {{/each}}
-{{else}}
-  <label for="username">Username</label>
-  <input type="text" name="username" id="username" required placeholder="Username"> 
-  <label for="email">Email</label>
-  <input type="text" name="email" id="email" required placeholder="email"> 
-  <label for="password">Password</label>
-  <input type="password" name="password" id="password" required placeholder="Password">
-  <label for="location">Location</label>
-  <input type="text" name="location" id="location" required placeholder="Location"> 
-    <label for="picture">Username</label>
-    <input type="file" name="picture" id="picture" > 
-{{/if}}
+    {{#if usernameExistent.length}}
+      <p class="validation">
+        {{#each usernameExistent}}{{this}}{{/each}}
+      </p>
+    {{/if}}
 
-<button type="submit">Sign Up</button>
+    {{#if emailformat.length}}
+      <p class="validation">
+        {{#each emailformat}}{{this}}{{/each}}
+      </p>
+    {{/if}}
 
-</form>
+    {{#if emailExistent.length}}
+      <p class="validation">
+        {{#each emailExistent}}{{this}}{{/each}}
+      </p>
+    {{/if}}
 
-{{#if passwordformat.length}}
-<p class="validation">
-  {{#each passwordformat}}{{this}}{{/each}}
-</p>
-{{/if}}
+    <form action="/auth/signup" method="POST" enctype="multipart/form-data">
 
-{{#if usernameExistent.length}}
-<p class="validation">
-  {{#each usernameExistent}}{{this}}{{/each}}
-</p>
-{{/if}}
+      {{#if formData.length}}
+        {{#each formData}}
+          <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required placeholder="Username" value="{{this.username}}"> 
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required placeholder="email" value="{{this.email}}"> 
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required placeholder="Password">
+          </div>
+          <div>
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location" required placeholder="Location" value="{{this.location}}"> 
+          </div>
+          <div>
+            <label for="picture">Profile picture</label>
+            <input type="file" name="picture" id="picture" > 
+          </div>
+        {{/each}}
+      {{else}}
+        <div>
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" required placeholder="Username"> 
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" required placeholder="email"> 
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required placeholder="Password">
+        </div>
+        <div>
+          <label for="location">Location</label>
+          <input type="text" name="location" id="location" required placeholder="Location"> 
+        </div>
+        <div>
+          <label for="picture">Profile picture</label>
+          <input type="file" name="picture" id="picture" > 
+        </div>
+      {{/if}}
 
-{{#if emailformat.length}}
-<p class="validation">
-  {{#each emailformat}}{{this}}{{/each}}
-</p>
-{{/if}}
+      <button class="button-form" type="submit">Sign Up</button>
 
-{{#if emailExistent.length}}
-<p class="validation">
-  {{#each emailExistent}}{{this}}{{/each}}
-</p>
-{{/if}}
+    </form>
+  </section>
+</section>
 
 
