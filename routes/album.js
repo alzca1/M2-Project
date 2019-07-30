@@ -29,15 +29,16 @@ router.get('/:id', async (req, res, next) => {
 });
 
 router.post('/:id/like/:albumId', async (req, res, next) => {
-  const { id } = req.params;
+  const id = req.params.id;
+  console.log(id);
   const { albumId } = req.params;
   const userId = req.session.currentUser._id;
 
   try {
-    const song = await spotifyApi.getAlbums([id]);
+    const album = await spotifyApi.getAlbums([id]);
     // console.log(song.body);
-    const songId = song.id;
-    await User.findByIdAndUpdate(userId, { $push: { tracks: songId } }, { new: true });
+
+    await User.findByIdAndUpdate(userId, { $push: { tracks: { trackId: id } } }, { new: true });
     res.redirect(`/album/${albumId}`);
   } catch (error) {
     next(error);
