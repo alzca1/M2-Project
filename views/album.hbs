@@ -1,57 +1,54 @@
-<section class="tracks">
+<section class="album-page">
 
-  <header>
-    <a href="javascript: history.go(-1);location.replace(document.referrer)">go back</a>
-
-    <h2>{{albumData.name}}</h2>
-    <h2>{{albumData.release_date}}</h2>
-  </header>
-
-  <div>
+  <a class="go-back" href="javascript: history.go(-1);location.replace(document.referrer)">
+    <img src="../images/arrow-left-color.png">
+  </a>
+  
+  <div class="big-image">
     <img src="{{albumData.images.[0].url}}" alt="{{albumData.name}}">
   </div>
+   
+  <form action="/album/{{albumData.id}}/addAlbum" method="POST" class="like">
+    <button class="btn-add" type="submit">like artist</button>
+  </form>
 
-  <button class="external-like-button">ExternalHeartLike</button>
-
-
-  <section class="track-list">
-    <p>like album</p>
-    <form action="/album/{{albumData.id}}/addAlbum" method="POST">
-      <button class="btn-add" type="submit">like album</button>
-    </form>
-
-
+  <section class="list-info-section">
+    <h1 class="name">{{albumData.name}}</h1>
+    <p class="date">{{albumData.release_date}}</p>
 
     {{#each myTracks}}
-
-      <article>
-        <p>{{this.name}}</p>
-        <p>{{this.id}}</p>
+      <article class="list-elements">
+        <div class="info-wrapper">
+          <h2>{{this.name}}</h2>
+          {{!-- <p>{{this.release_date}} · {{this.artists.0.name}}</p> --}}
+        </div>
         <audio controls name="media">
           <source src="{{this.preview_url}}" type="audio/mpeg">
         </audio>
-        <ul>
-          <li>
+        {{!-- <ul>
+          {{!-- <li>
             <form action="/album/{{this.id}}/like/{{this.albumId}}" method="POST">
               <button class="btn-like" type="submit">Like</button>
             </form>
-          </li>
-          <li> <button class="share-button">share</button></li>
-          <li> <a href="#0" class="add-button">add</a></li></ul>-.
-          {{#each this.myPlaylist}}
+          </li> --}}
+          {{!-- <li> <a href="#0" class="add-button">add</a></li> --}}
+        {{!-- </ul> --}} --}}
+          {{!-- {{#each this.myPlaylist}}
             <p>{{../name}}</p>
             <li>{{this.name}}
               <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}/from/{{../artists.0.id}}" method="POST">
                 <button class="btn-add" type="submit">add song</button>
               </form>
             </li>
-          {{/each}}
+          {{/each}} --}}
       </article>
     {{/each}}
   </section>
 </section>
 
-<section class="add-to-playlists">
+
+
+{{!-- <section class="add-to-playlists">
   <ul>
     {{#each user.playlists}}
       <li>{{this.name}}
@@ -61,7 +58,7 @@
       </li>
     {{/each}}
   </ul>
-</section>
+</section> --}}
 {{> userNavbar}}
 
 

@@ -20,7 +20,16 @@
       <a class="all-covers" href="/playlistCollection">View All</a>
     </section>
     <div class="playlist-slider">
-      {{#each playlists}}
+      <article class="cover-article">
+          <a href="/playlistSongCollection/my-favou">
+            <div>
+              <img src="" alt="">
+            </div>
+            <h3>favoritos</h3>
+          </a>
+        </article>
+
+      {{#each newUser.playlists}}
         <article class="cover-article">
           <a href="/playlistSongCollection/{{_id}}">
             <div>
@@ -48,7 +57,7 @@
       {{!-- <a href="/playlistSongCollection/{{_id}}"> --}}
       <a href="#0">
         <div>
-          <img src="" alt="">
+          <img src="{{this.images.0.url}}" alt="{{this.name}}">
         </div>
         <h3>{{name}}</h3>
       </a>
@@ -71,7 +80,7 @@
     <article class="cover-article">
       <a href="#0">
         <div>
-          <img src="" alt="">
+          <img src="{{this.images.0.url}}" alt="{{this.name}}">
         </div>
         <h3>{{name}}</h3>
       </a>

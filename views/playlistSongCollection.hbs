@@ -1,6 +1,9 @@
  <a href="javascript: history.go(-1);location.replace(document.referrer)">go back</a>
 <h1> {{name}}</h1>
+{{#if error}}
+  <p>{{error.message}}</p>
 
+{{else}}
 {{#each trackInfo}}
 
       <article>
@@ -27,11 +30,13 @@
           {{/each}} --}}
       
         <a href="/artist/{{artists.0.id}}">View Artist</a>  
-        <a href="/album/{{albumId}}">View album</a>
+        <a href="/album/{{this.albumId}}">View album</a>
         <form class="playlist-form" action="/playlistSongCollection/{{playlist._id}}/delete/{{this.id}}" method="POST">
           <button class="playlist-create" type="submit">DELETE</button>
         </form>
 
       </article>
     {{/each}}
+
+    {{/if}}
 

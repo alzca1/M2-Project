@@ -225,26 +225,26 @@ section.testimonials .button {
   justify-content: flex-star;
   align-items: center; }
 
-#private-main, .search-results {
+#private-main, .search-results, .artist-page, .album-page {
   width: 100%;
   height: auto;
   min-height: 100vh;
   background-color: rgba(255, 227, 125, 0.1); }
-  #private-main .title, .search-results .title {
+  #private-main .title, .search-results .title, .artist-page .title, .album-page .title {
     width: 78%;
     margin: 0 auto;
     color: #80713E;
     padding: 30px 0; }
-    #private-main .title p, .search-results .title p {
+    #private-main .title p, .search-results .title p, .artist-page .title p, .album-page .title p {
       font-size: 10px; }
-    #private-main .title h1, .search-results .title h1 {
+    #private-main .title h1, .search-results .title h1, .artist-page .title h1, .album-page .title h1 {
       font-size: 25px;
       margin: 0; }
-  #private-main .search-bar, .search-results .search-bar {
+  #private-main .search-bar, .search-results .search-bar, .artist-page .search-bar, .album-page .search-bar {
     width: 80%;
     height: 50px;
     margin: 0 auto; }
-    #private-main .search-bar form, .search-results .search-bar form {
+    #private-main .search-bar form, .search-results .search-bar form, .artist-page .search-bar form, .album-page .search-bar form {
       background-color: white;
       width: 100%;
       height: 50px;
@@ -260,7 +260,7 @@ section.testimonials .button {
       flex-direction: row;
       justify-content: flex-star;
       align-items: center; }
-      #private-main .search-bar form input, .search-results .search-bar form input {
+      #private-main .search-bar form input, .search-results .search-bar form input, .artist-page .search-bar form input, .album-page .search-bar form input {
         width: 80%;
         height: 50px;
         padding: 0 0 0 30px;
@@ -268,40 +268,40 @@ section.testimonials .button {
         border: none;
         font-size: 14px;
         color: #80713E; }
-      #private-main .search-bar form button, .search-results .search-bar form button {
+      #private-main .search-bar form button, .search-results .search-bar form button, .artist-page .search-bar form button, .album-page .search-bar form button {
         width: 20%;
         height: 50px; }
-        #private-main .search-bar form button img, .search-results .search-bar form button img {
+        #private-main .search-bar form button img, .search-results .search-bar form button img, .artist-page .search-bar form button img, .album-page .search-bar form button img {
           height: 20px;
           width: auto; }
-  #private-main .covers, .search-results .covers {
+  #private-main .covers, .search-results .covers, .artist-page .covers, .album-page .covers {
     width: 80%;
     height: 180px;
     margin: 25px 0 20px 10%;
     position: relative; }
-    #private-main .covers .covers-text, .search-results .covers .covers-text {
+    #private-main .covers .covers-text, .search-results .covers .covers-text, .artist-page .covers .covers-text, .album-page .covers .covers-text {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%; }
-      #private-main .covers .covers-text h2, .search-results .covers .covers-text h2 {
+      #private-main .covers .covers-text h2, .search-results .covers .covers-text h2, .artist-page .covers .covers-text h2, .album-page .covers .covers-text h2 {
         font-size: 16px;
         width: auto;
         color: #80713E; }
-      #private-main .covers .covers-text .all-covers, .search-results .covers .covers-text .all-covers {
+      #private-main .covers .covers-text .all-covers, .search-results .covers .covers-text .all-covers, .artist-page .covers .covers-text .all-covers, .album-page .covers .covers-text .all-covers {
         top: 0;
         width: auto;
         font-size: 12px;
         text-decoration: none;
         color: rgba(0, 0, 0, 0.35); }
-    #private-main .covers .playlist-slider, .search-results .covers .playlist-slider {
+    #private-main .covers .playlist-slider, .search-results .covers .playlist-slider, .artist-page .covers .playlist-slider, .album-page .covers .playlist-slider {
       width: auto;
       height: 120px;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       margin-top: 10px; }
-      #private-main .covers .playlist-slider .cover-article, .search-results .covers .playlist-slider .cover-article {
+      #private-main .covers .playlist-slider .cover-article, .search-results .covers .playlist-slider .cover-article, .artist-page .covers .playlist-slider .cover-article, .album-page .covers .playlist-slider .cover-article {
         width: 110px;
         height: 140px;
         border-radius: 10px;
@@ -310,12 +310,12 @@ section.testimonials .button {
         -webkit-box-shadow: 0px 20px 77px -9px rgba(171, 135, 5, 0.75);
         -moz-box-shadow: 0px 20px 77px -9px rgba(171, 135, 5, 0.75);
         box-shadow: 0px 20px 77px -9px rgba(171, 135, 5, 0.75); }
-        #private-main .covers .playlist-slider .cover-article a, .search-results .covers .playlist-slider .cover-article a {
+        #private-main .covers .playlist-slider .cover-article a, .search-results .covers .playlist-slider .cover-article a, .artist-page .covers .playlist-slider .cover-article a, .album-page .covers .playlist-slider .cover-article a {
           width: 110px;
           height: 140px;
           position: relative;
           display: block; }
-          #private-main .covers .playlist-slider .cover-article a h3, .search-results .covers .playlist-slider .cover-article a h3 {
+          #private-main .covers .playlist-slider .cover-article a h3, .search-results .covers .playlist-slider .cover-article a h3, .artist-page .covers .playlist-slider .cover-article a h3, .album-page .covers .playlist-slider .cover-article a h3 {
             font-size: 12px;
             color: white;
             text-decoration: none;
@@ -475,3 +475,202 @@ footer {
         -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2); }
+
+.artist-page .go-back {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 20px;
+  width: 60px;
+  height: 50px;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .artist-page .go-back img {
+    height: 20px;
+    margin-left: -5px; }
+
+.artist-page .big-image {
+  width: 100%;
+  height: 55vh;
+  background-color: red;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .artist-page .big-image img {
+    width: 100%;
+    height: auto; }
+
+.artist-page .like {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: red; }
+
+.artist-page .list-info-section {
+  width: 100%;
+  height: auto;
+  background-color: #f5f5f5;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: -15px;
+  z-index: 3;
+  position: absolute; }
+  .artist-page .list-info-section .name {
+    text-align: center;
+    margin: 30px auto; }
+  .artist-page .list-info-section .list-elements {
+    width: 90%;
+    margin: 20px auto;
+    height: 100px;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 1; }
+    .artist-page .list-info-section .list-elements .image-wrapper {
+      width: 80px;
+      height: 80px;
+      margin-left: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .artist-page .list-info-section .list-elements .image-wrapper img {
+        width: auto;
+        height: 100%; }
+    .artist-page .list-info-section .list-elements .info-wrapper {
+      margin-left: 10px;
+      width: calc(100% - 110px); }
+      .artist-page .list-info-section .list-elements .info-wrapper h2 {
+        font-size: 15px;
+        width: auto;
+        color: #80713E;
+        margin: 5px 0 5px 10px;
+        line-height: 1; }
+      .artist-page .list-info-section .list-elements .info-wrapper p {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.5);
+        margin-left: 10px; }
+      .artist-page .list-info-section .list-elements .info-wrapper a {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        background-color: #FF8178;
+        -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2); }
+
+.album-page .go-back {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 20px;
+  width: 60px;
+  height: 50px;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .album-page .go-back img {
+    height: 20px;
+    margin-left: -5px; }
+
+.album-page .big-image {
+  width: 100%;
+  height: 55vh;
+  background-color: red;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .album-page .big-image img {
+    width: 100%;
+    height: auto; }
+
+.album-page .like {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: red; }
+
+.album-page .list-info-section {
+  width: 100%;
+  height: auto;
+  background-color: #f5f5f5;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: -15px;
+  z-index: 3;
+  position: absolute; }
+  .album-page .list-info-section .name {
+    text-align: center;
+    margin: 30px auto 5px auto; }
+  .album-page .list-info-section .date {
+    font-size: 14px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px; }
+  .album-page .list-info-section .list-elements {
+    width: 90%;
+    margin: 0 auto 20px auto;
+    height: 100px;
+    border-radius: 10px;
+    background-color: white;
+    -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1; }
+    .album-page .list-info-section .list-elements .info-wrapper {
+      margin: 0 0 0 10px;
+      width: calc(100% - 60px);
+      height: auto; }
+      .album-page .list-info-section .list-elements .info-wrapper h2 {
+        font-size: 15px;
+        width: auto;
+        color: #80713E;
+        margin: 10px 0 5px 10px;
+        line-height: 1; }
+      .album-page .list-info-section .list-elements .info-wrapper p {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.5);
+        margin-left: 10px; }
+      .album-page .list-info-section .list-elements .info-wrapper a {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        background-color: #FF8178;
+        -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2); }
+    .album-page .list-info-section .list-elements audio {
+      height: 40px;
+      margin: 5px 0 0 10px;
+      width: 70%; }

@@ -40,28 +40,3 @@ router.get('/:id', async (req, res, next) => {
     next(error);
   }
 });
-
-router.post('/:idPlaylist/delete/:newTrackId', async (req, res, next) => {
-  const idPlaylist = req.params.idPlaylist;
-  const { newTrackId } = req.params;
-  const userId = req.session.currentUser._id;
-  try {
-    const newUser = await User.findById(userId).populate('playlists');
-    newUser.playlists[0].tracks.forEach(async (elem) => {
-      console.log(typeof elem.trackId);
-      console.log(typeof newTrackId);
-      console.log(newTrackId);
-      console.log(elem.trackId);
-      if (elem.trackId === newTrackId) {
-        await Playlist.findByIdAndUpdate(idPlaylist, { $pull: { tracks: { trackId: newTrackId } } });
-      }
-    });
-    res.redirect(`/playlistSongCollection/${idPlaylist}`);
-  } catch (error) {
-    next(error);
-  }
-});
-
-
-
-module.exports = router;
