@@ -22,7 +22,7 @@ router.get('/:id', async (req, res, next) => {
       track.myPlaylist = user.playlists;
       track.albumId = albumData.id;
     });
-    console.log(myTracks);
+    // console.log(albumData);
     user.playlists.forEach((playlist) => {
       playlist.albumId = albumData.id;
     });
@@ -31,6 +31,28 @@ router.get('/:id', async (req, res, next) => {
     next(error);
   }
 });
+
+// router.post('/:albumId/addAlbum', async (req, res, next) => {
+//   const { id } = req.params;
+//   const userId = req.session.currentUser._id;
+
+//   try {
+//     const newUser = await User.findById(userId);
+//     let state = false;
+//     newUser.albums.forEach(async (elem) => {
+//       if (elem.albumId === id) {
+//         state = true;
+//         await User.findByIdAndUpdate(userId, { $pull: { albumss: { albumId: id } } });
+//       }
+//     });
+//     if (!state) {
+//       await User.findByIdAndUpdate(userId, { $push: { albums: { albumId: id } } }, { new: true });
+//     }
+//     res.redirect(`/album/${id}`);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 router.post('/:id/like/:albumId', async (req, res, next) => {
   const id = req.params.id;
