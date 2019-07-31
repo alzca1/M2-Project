@@ -16,7 +16,7 @@
             </form>
           </li>
           <li> <button class="share-button">share</button></li>
-          <li> <a href="#0" class="add-button">add</a></li></ul>-.
+          <li> <a href="#0" class="add-button">add</a></li></ul>
           {{!-- {{#each this.myPlaylist}}
             <p>{{../name}}</p>
             <li>{{this.name}}
@@ -25,21 +25,9 @@
               </form>
             </li>
           {{/each}} --}}
+      
+        <a href="/artist/{{artists.0.id}}">View Artist</a>  
+        <a href="/album/{{albumId}}">View album</a>
       </article>
     {{/each}}
-<a href="/artist/{{playlist}}">View Artist</a>
 
-<p>View artist</p>
-    <form action="/artist/{{infoArtist.id}}" method="POST">
-      <button class="btn-add" type="submit">View Artist</button>
-    </form>
-
-      <p>View album</p>
-    <form action="/album/{{albumData.id}}/addAlbum" method="POST">
-      <button class="btn-add" type="submit">like album</button>
-    </form>
-
-    <p>Delete song</p>
-    <form action="/artist/{{infoArtist.id}}/addArtist" method="POST">
-      <button class="btn-add" type="submit">like artist</button>
-    </form>
