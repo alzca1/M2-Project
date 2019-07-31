@@ -13,6 +13,11 @@
   <h3>{{infoArtist.name}}</h3>
   <p>description</p>
 
+ <p>like artist</p>
+    <form action="/artist/{{infoArtist.id}}/addArtist" method="POST">
+      <button class="btn-add" type="submit">like artist</button>
+    </form>
+
   <section>
     {{#each albums}}
     <article>

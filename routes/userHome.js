@@ -9,9 +9,8 @@ const spotifyApi = require('../config/credentials.js');
 router.get('/', async (req, res, next) => {
   const userId = req.session.currentUser._id;
   const newUser = await User.findById(userId).populate('playlists');
-  const newData = await spotifyApi.getAlbums([User.albums.albumsId]);
-  console.log(newData);
-  res.render('userHome', newUser, newData);
+  // const newData = await spotifyApi.getAlbums([User.albums.albumsId]);
+  res.render('userHome', newUser);
 });
 
 module.exports = router;
