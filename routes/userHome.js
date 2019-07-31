@@ -6,7 +6,7 @@ const User = require('../models/User.js');
 
 router.get('/', async (req, res, next) => {
   const userId = req.session.currentUser._id;
-  const newUser = await User.findById(userId).populate('playlists'); // con populate mongoose busca todas las recetas relacionadas con el user y las trae
+  const newUser = await User.findById(userId).populate('playlists').populate('artists').populate('albums').populate('tracks');
 
   res.render('userHome', newUser);
 });

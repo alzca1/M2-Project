@@ -1,6 +1,6 @@
 <section id="private-main">
 
-  <div>
+  <div class="title">
     <p>Welcome</p>
     <h1>{{currentUser.username}}</h1>
   </div>
@@ -9,32 +9,106 @@
     <form action="/searchResults" method="GET">
       <label for="artist"></label>
       <input type="text" name="artist" id="artist" placeholder="Looking for an artist!" required>
-      <button type="submit">OO</button>
+      <button type="submit">
+        <img src="../images/search.png" alt="search icon">
+      </button>
     </form>
   </section>
 
-  
-
   <section class="covers">
-    <h2>My Playlists</h2>
-    <a href="/playlistCollection">View Playlists</a>
+    <section class="covers-text">
+      <h2>My Playlists</h2>
+      <a class="all-covers" href="/playlistCollection">View All</a>
+    </section>
+    <div class="playlist-slider">
+      {{#each playlists}}
+        <article class="cover-article">
+          <a href="/playlistSongCollection/{{_id}}">
+            <div>
+              <img src="" alt="">
+            </div>
+            <h3>{{name}}</h3>
+          </a>
+        </article>
+      {{/each}}
+      <article class="cover-article">
+        <a class="add-playlist" href="#0">+</a>
+      </article>
+    </div>
+  </section>
+
+{{!-- poner artistas favoritos --}}
+    <section class="covers">
+    <section class="covers-text">
+      <h2>My Artists</h2>
+      <a class="all-covers" href="#0">View All</a>
+    </section>
     <div class="playlist-slider">
       {{#each playlists}}
     <article class="cover-article">
-      <div>
-        <img src="" alt="">
-      </div>
-      <h3>{{name}}</h3>
-      <p>description</p>
-      <a href="/playlistSongCollection/{{_id}}">go</a>
+      {{!-- <a href="/playlistSongCollection/{{_id}}"> --}}
+      <a href="#0">
+        <div>
+          <img src="" alt="">
+        </div>
+        <h3>{{name}}</h3>
+      </a>
     </article>
      {{/each}}
+    <article class="cover-article">
+      <a class="add-playlist" href="#0">+</a>
+    </article>
     </div>
-   
-  
-   
-   <a class="add-playlist" href="#0">+</a>
   </section>
+
+{{!-- poner albumes favoritos --}}
+    <section class="covers">
+    <section class="covers-text">
+      <h2>My Albums</h2>
+      <a class="all-covers" href="#0">View All</a>
+    </section>
+    <div class="playlist-slider">
+      {{#each playlists}}
+    <article class="cover-article">
+      {{!-- <a href="/playlistSongCollection/{{_id}}"> --}}
+      <a href="#0">
+        <div>
+          <img src="" alt="">
+        </div>
+        <h3>{{name}}</h3>
+      </a>
+    </article>
+     {{/each}}
+    <article class="cover-article">
+      <a class="add-playlist" href="#0">+</a>
+    </article>
+    </div>
+  </section>
+
+{{!-- poner canciones favoritos --}}
+    <section class="covers">
+    <section class="covers-text">
+      <h2>My favorite songs</h2>
+      <a class="all-covers" href="#0">View All</a>
+    </section>
+    <div class="playlist-slider">
+      {{#each playlists}}
+    <article class="cover-article">
+      {{!-- <a href="/playlistSongCollection/{{_id}}"> --}}
+      <a href="#0">
+        <div>
+          <img src="" alt="">
+        </div>
+        <h3>{{name}}</h3>
+      </a>
+    </article>
+     {{/each}}
+    <article class="cover-article">
+      <a class="add-playlist" href="#0">+</a>
+    </article>
+    </div>
+  </section>
+
 
 
   {{> userNavbar}}
@@ -42,13 +116,14 @@
 
 
 <section class="playlist-collection">
-  <form class="playlist-form">
-    <label for="name">name</label>
-    <input type="text" name="name" id="name">
-    <button class="playlist-create" type="submit">Add playlist</button>
-  </form>
-  
+  <section class="hidden-form">
+    <h2>Create new playlist</h2>
+    <form class="playlist-form">
+      <label for="name"></label>
+      <input type="text" name="name" id="name" placeholder="Name">
+      <button class="playlist-create" type="submit">Add playlist</button>
+    </form>
+  </section>
 </section>
-
 
 <script src="../javascripts/main.js"></script>
