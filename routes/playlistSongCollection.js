@@ -8,16 +8,24 @@ const spotifyApi = require('../config/credentials.js');
 
 router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
-  console.log({ id });
   try {
-    const songs = await Playlist.findById(id);
-    // const data = await spotifyApi.getAlbumTracks(id);
-    const newData = await spotifyApi.getAlbums([id]);
-    // const tracksInfo = await spotifyApi.getTracks([id]);
-    // console.log(tracksInfo);
-    const tracks = newData.body.items;
-
-    res.render('playlistSongCollection', songs, tracks);
+    const playlist = await Playlist.findById(id);
+    const trackInfo = [];
+    playlist.tracks.forEach(async (track) => {
+      const album = await spotifyApi.getAlbums([track.albumId]);
+      const trackIdFromPlaylist = track.trackId;
+      const superTracks = album.body.albums[0];
+      superTracks.tracks.items.forEach((item) => {
+        if (item.id === trackIdFromPlaylist) {
+          trackInfo.push(item);
+        }
+      });
+    });
+    const newData = await spotifyApi.getAlbums([playlist.tracks[0].albumId]);
+    const album = newData.body;
+    console.log(newData.body);
+    const superInfoTrack = { playlist, album, trackInfo };
+    res.render('playlistSongCollection', superInfoTrack);
   } catch (error) {
     next(error);
   }

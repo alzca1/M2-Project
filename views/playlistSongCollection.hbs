@@ -1,4 +1,45 @@
  <a href="javascript: history.go(-1);location.replace(document.referrer)">go back</a>
 <h1> {{name}}</h1>
 
+{{#each trackInfo}}
 
+      <article>
+        <p>{{this.name}}</p>
+        <p>{{this.id}}</p>
+        <audio controls name="media">
+          <source src="{{this.preview_url}}" type="audio/mpeg">
+        </audio>
+        <ul>
+          <li>
+            <form action="/album/{{this.id}}/like/{{this.albumId}}" method="POST">
+              <button class="btn-like" type="submit">Like</button>
+            </form>
+          </li>
+          <li> <button class="share-button">share</button></li>
+          <li> <a href="#0" class="add-button">add</a></li></ul>-.
+          {{!-- {{#each this.myPlaylist}}
+            <p>{{../name}}</p>
+            <li>{{this.name}}
+              <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}/from/{{../artists.0.id}}" method="POST">
+                <button class="btn-add" type="submit">add song</button>
+              </form>
+            </li>
+          {{/each}} --}}
+      </article>
+    {{/each}}
+<a href="/artist/{{playlist}}">View Artist</a>
+
+<p>View artist</p>
+    <form action="/artist/{{infoArtist.id}}" method="POST">
+      <button class="btn-add" type="submit">View Artist</button>
+    </form>
+
+      <p>View album</p>
+    <form action="/album/{{albumData.id}}/addAlbum" method="POST">
+      <button class="btn-add" type="submit">like album</button>
+    </form>
+
+    <p>Delete song</p>
+    <form action="/artist/{{infoArtist.id}}/addArtist" method="POST">
+      <button class="btn-add" type="submit">like artist</button>
+    </form>
