@@ -21,8 +21,9 @@
     </form>
 
 
-    
+
     {{#each myTracks}}
+
       <article>
         <p>{{this.name}}</p>
         <p>{{this.id}}</p>
@@ -40,7 +41,7 @@
           {{#each this.myPlaylist}}
             <p>{{../name}}</p>
             <li>{{this.name}}
-              <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}" method="POST">
+              <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}/from/{{../artists.0.id}}" method="POST">
                 <button class="btn-add" type="submit">add song</button>
               </form>
             </li>

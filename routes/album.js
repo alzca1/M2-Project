@@ -18,14 +18,17 @@ router.get('/:id', async (req, res, next) => {
     var myTracks = tracks;
 
     const albumData = newData.body.albums[0];
+    // console.log(albumData.artists);
     myTracks.forEach((track) => {
       track.myPlaylist = user.playlists;
       track.albumId = albumData.id;
     });
+    console.log(myTracks[0]);
     // console.log(albumData);
     user.playlists.forEach((playlist) => {
       playlist.albumId = albumData.id;
     });
+    // console.log({ myTracks, albumData, user });
     res.render('album', { myTracks, albumData, user });
   } catch (error) {
     next(error);
@@ -40,7 +43,6 @@ router.post('/:id/addAlbum', async (req, res, next) => {
     const newUser = await User.findById(userId);
     let state = false;
     newUser.albums.forEach(async (elem) => {
-      console.log('hola' + elem);
       if (elem.albumId === id) {
         state = true;
         await User.findByIdAndUpdate(userId, { $pull: { albums: { albumId: id } } });
@@ -78,12 +80,15 @@ router.post('/:id/like/:albumId', async (req, res, next) => {
   }
 });
 
-router.post('/:id/add/:albumId/to/:songId', async (req, res, next) => {
+router.post('/:id/add/:albumId/to/:trackId/from/:artistId', async (req, res, next) => {
   const id = req.params.id;
+  const artistId = req.params.artistId;
   const albumId = req.params.albumId;
-  const songId = req.params.songId;
+  const trackId = req.params.trackId;
+
+
   try {
-    await Playlist.findByIdAndUpdate(id, { $push: { tracks: { trackId: songId } } }, { new: true });
+    await Playlist.findByIdAndUpdate(id, { $push: { tracks: { trackId: trackId, albumId: albumId, artistId: artistId } } }, { new: true });
     res.redirect(`/album/${albumId}`);
   } catch (error) {
     next(error);

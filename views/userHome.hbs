@@ -1,5 +1,4 @@
 <section id="private-main">
-
   <div class="title">
     <p>Welcome</p>
     <h1>{{currentUser.username}}</h1>
@@ -44,7 +43,7 @@
       <a class="all-covers" href="#0">View All</a>
     </section>
     <div class="playlist-slider">
-      {{#each playlists}}
+      {{#each artistsInfo}}
     <article class="cover-article">
       {{!-- <a href="/playlistSongCollection/{{_id}}"> --}}
       <a href="#0">
@@ -68,9 +67,8 @@
       <a class="all-covers" href="#0">View All</a>
     </section>
     <div class="playlist-slider">
-      {{#each playlists}}
+      {{#each albumsInfo}}
     <article class="cover-article">
-      {{!-- <a href="/playlistSongCollection/{{_id}}"> --}}
       <a href="#0">
         <div>
           <img src="" alt="">
@@ -85,29 +83,6 @@
     </div>
   </section>
 
-{{!-- poner canciones favoritos --}}
-    <section class="covers">
-    <section class="covers-text">
-      <h2>My favorite songs</h2>
-      <a class="all-covers" href="#0">View All</a>
-    </section>
-    <div class="playlist-slider">
-      {{#each playlists}}
-    <article class="cover-article">
-      {{!-- <a href="/playlistSongCollection/{{_id}}"> --}}
-      <a href="#0">
-        <div>
-          <img src="" alt="">
-        </div>
-        <h3>{{name}}</h3>
-      </a>
-    </article>
-     {{/each}}
-    <article class="cover-article">
-      <a class="add-playlist" href="#0">+</a>
-    </article>
-    </div>
-  </section>
 
 
 
