@@ -1,35 +1,59 @@
-<section class="playlist-page">
-  <header>
-    <a href="/userHome">go back</a>
-    <h3>"{{artist}}" in Playlist</h3>
-  </header>
- 
- <section class="playlist-scrolldown">
+<section class="playlist-collection-page">
+
+  <a class="go-back" href="javascript: history.go(-1);location.replace(document.referrer)">
+    <img src="../images/arrow-left-color.png">
+  </a>
+
+  <div class="title">
+    <h1>Playlists</h1>
+  </div>
+
+ <section class="list-elements">
   {{#each playlists}}
     <article>
-      
-      <div>
+      <div class="image-wrapper">
+        {{#if this.images.0.url}}
+          <img src="{{this.images.0.url}}" alt="artist photo">
+        {{else}}
+          <img src="./images/man-4-400.jpg" alt="artist photo">
+        {{/if}}
+      </div>
+      <div class="info-wrapper">
+        <h2>{{this.name}}</h2>
+        <a class="view-more" href="/playlistSongCollection/{{this.id}}">
+          <img src="../images/arrow-white.png" alt="add icon">
+        </a>
+        <form action="/playlistCollection/{{this.id}}/delete" method="POST">
+          <button class="btn-delete" type="submit">
+            <img src="../images/arrow-white.png" alt="add icon">
+          </button>
+        </form>
+      </div>
+
+      {{!-- <div>
         <h3>{{this.name}}</h3>
         <a href="/playlistSongCollection/{{this.id}}">View playlist</a>
       </div>
       <form action="/playlistCollection/{{this.id}}/delete" method="POST">
        <button class="btn-delete" type="submit">Delete</button>
-      </form>
+      </form> --}}
     </article>
   {{/each}}
   </section>
   {{> userNavbar}}
 </section>
 
-<section class="playlist-scrolldown-collection">
+{{!-- <section class="playlist-scrolldown-collection">
   <form class="playlist-scrolldown-form">
     <label for="name">name</label>
     <input type="text" name="name" id="name">
     <button class="playlist-create" type="submit">Add playlist</button>
-  </form>
-  
-</section>
+  </form> 
+</section> --}}
+
+{{> userNavbar}}
 
 
 
 <script src="../javascripts/mainPlaylist.js"></script>
+
