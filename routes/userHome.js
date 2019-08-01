@@ -23,11 +23,19 @@ router.get('/', async (req, res, next) => {
       const artistInfo = await spotifyApi.getArtists([string]);
       artistsInfo.push(artistInfo.body.artists[0]);
     }));
+    newUser.playlists.forEach(async (playlist) => {
+      spotifyApi.getAlbum([`${playlist.tracks[0].albumId}`]).then((album) => {
+        if (album.body.images) {
+          playlist.image = album.body.images[0].url;
+        }
+      }).catch((error) => console.log(error));
+    });
 
     const multipromise = Promise.all([promisesArtists, promisesAlbums]);
 
     multipromise.then(() => {
       const data = { artistsInfo, albumsInfo, newUser };
+
       res.render('userHome', data);
     });
   } catch (error) {

@@ -28,12 +28,14 @@
           <h3>favoritos</h3>
         </a>
       </article> --}}
+              <img src="{{superInfoTrack.albumCover}}" alt="">
 
       {{#each newUser.playlists}}
         <article class="cover-article">
           <a href="/playlistSongCollection/{{_id}}">
             <div>
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
+              <img src="{{this.albumCover}}" alt="">
             </div>
             <h3>{{name}}</h3>
           </a>
@@ -61,6 +63,7 @@
           <a href="#0">
             <div>
               <img src="{{this.images.0.url}}" alt="{{this.name}}">
+              {{!-- <a href = ="/artist/{{_id}}">this.name</a> --}}
             </div>
             <h3>{{name}}</h3>
           </a>

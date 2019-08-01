@@ -11,13 +11,16 @@ router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
     const playlist = await Playlist.findById(id);
-    console.log(playlist);
     const trackInfo = [];
     if (playlist.tracks.length === 0) {
       const error = {
         message: 'You have not added any songs yet'
       };
-      return res.render('playlistSongCollection', { error });
+      const data = {
+        error,
+        playlist
+      };
+      return res.render('playlistSongCollection', data);
     }
     playlist.tracks.forEach(async (track) => {
       const album = await spotifyApi.getAlbums([track.albumId]);
@@ -36,7 +39,6 @@ router.get('/:id', async (req, res, next) => {
 
     const album = newData.body;
     const albumCover = newData.body.albums[0].images[0].url;
-
     const superInfoTrack = { playlist, album, trackInfo, albumCover };
     res.render('playlistSongCollection', superInfoTrack);
   } catch (error) {

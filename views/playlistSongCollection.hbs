@@ -5,7 +5,12 @@
   </a>
   
   <div class="big-image">
+    {{#if albumCover}}
     <img src="{{albumCover}}" alt="{{albumData.name}}">
+    {{else}}
+    <img src="{{playlist.image}}" alt="{{albumData.name}}">
+      {{/if}}
+
   </div>
 
   <section class="list-info-section">
@@ -16,7 +21,7 @@
       {{#if error}}
         <p>{{error.message}}</p>
         <p>Search for an Artist to add your first song!!!</p>
-        <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}/from/{{../artists.0.id}}" method="POST">
+        <form action="/album/{{playlist.id}}/add/{{this.albumId}}/to/{{../id}}/from/{{../artists.0.id}}" method="POST">
           <button class="btn-add" type="submit">add song</button>
         </form>
       {{else}}
