@@ -93,6 +93,16 @@ section.testimonials .button {
   #main-homepage .homepage-info {
     width: 80%;
     height: auto; }
+    #main-homepage .homepage-info .logo {
+      width: 200px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 50px auto; }
+      #main-homepage .homepage-info .logo img {
+        width: 100%;
+        height: auto; }
     #main-homepage .homepage-info h1 {
       font-size: 20px;
       color: #80713E; }
@@ -115,7 +125,136 @@ section.testimonials .button {
         padding-top: 20px;
         font-size: 16px; }
 
-#login, #sign {
+#sign {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: linear-gradient(135deg, #FFD9B9, #FFF6AD, #FFABD1);
+  background-size: 600% 600%;
+  -webkit-animation: welcome-section 7s ease infinite;
+  -moz-animation: welcome-section 7s ease infinite;
+  -o-animation: welcome-section 7s ease infinite;
+  animation: welcome-section 7s ease infinite; }
+
+@keyframes welcome-section {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+  #sign .go-back {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 60px;
+    height: 50px;
+    background-color: white;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #sign .go-back img {
+      height: 20px;
+      margin-left: -5px; }
+  #sign .login-sign-info {
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px; }
+    #sign .login-sign-info .logo {
+      width: 200px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 50px auto; }
+      #sign .login-sign-info .logo img {
+        width: 100%;
+        height: auto; }
+    #sign .login-sign-info .validation {
+      color: red;
+      width: 80%;
+      margin: 20px auto;
+      text-align: center; }
+    #sign .login-sign-info form {
+      width: 80%;
+      height: auto;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-star;
+      align-items: center; }
+      #sign .login-sign-info form div {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75); }
+        #sign .login-sign-info form div label {
+          position: absolute;
+          margin: 15px 0 0 30px;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5); }
+        #sign .login-sign-info form div input {
+          width: 100%;
+          height: 80px;
+          padding: 15px 0 0 30px;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+          font-size: 16px;
+          color: #80713E; }
+      #sign .login-sign-info form .profile-picture {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75); }
+        #sign .login-sign-info form .profile-picture label {
+          position: absolute;
+          margin: 15px 0 0 30px;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5); }
+        #sign .login-sign-info form .profile-picture input {
+          width: 100%;
+          height: 80px;
+          padding: 35px 0 0 20px;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+          font-size: 16px;
+          color: #80713E; }
+      #sign .login-sign-info form .button-form {
+        width: 100%;
+        height: 60px;
+        border-radius: 10px;
+        background: white;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        border: none;
+        font-size: 16px;
+        color: #80713E;
+        z-index: 1; }
+    #sign .login-sign-info .register {
+      margin: 10px auto;
+      font-size: 12px;
+      color: #80713E;
+      width: 78%;
+      text-align: center; }
+      #sign .login-sign-info .register p {
+        display: inline;
+        margin-right: 5px; }
+
+#login {
   width: 100%;
   min-height: 100vh;
   height: auto;
@@ -137,7 +276,7 @@ section.testimonials .button {
     background-position: 100% 50%; }
   100% {
     background-position: 0% 50%; } }
-  #login .go-back, #sign .go-back {
+  #login .go-back {
     position: absolute;
     left: 0;
     top: 20px;
@@ -150,23 +289,28 @@ section.testimonials .button {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-    #login .go-back img, #sign .go-back img {
+    #login .go-back img {
       height: 20px;
       margin-left: -5px; }
-  #login .login-sign-info, #sign .login-sign-info {
+  #login .login-sign-info {
     width: 100%;
     margin-top: -100px; }
-    #login .login-sign-info .logo, #sign .login-sign-info .logo {
-      width: 100px;
-      height: 60px;
-      background-color: aqua;
-      margin: 20px auto 50px auto; }
-    #login .login-sign-info .validation, #sign .login-sign-info .validation {
+    #login .login-sign-info .logo {
+      width: 200px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 50px auto; }
+      #login .login-sign-info .logo img {
+        width: 100%;
+        height: auto; }
+    #login .login-sign-info .validation {
       color: red;
       width: 80%;
       margin: 20px auto;
       text-align: center; }
-    #login .login-sign-info form, #sign .login-sign-info form {
+    #login .login-sign-info form {
       width: 80%;
       height: auto;
       margin: auto;
@@ -174,7 +318,7 @@ section.testimonials .button {
       flex-direction: column;
       justify-content: flex-star;
       align-items: center; }
-      #login .login-sign-info form div, #sign .login-sign-info form div {
+      #login .login-sign-info form div {
         width: 100%;
         height: 80px;
         border-radius: 10px;
@@ -184,12 +328,12 @@ section.testimonials .button {
         -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
         -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
         box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75); }
-        #login .login-sign-info form div label, #sign .login-sign-info form div label {
+        #login .login-sign-info form div label {
           position: absolute;
           margin: 15px 0 0 30px;
           font-size: 10px;
           color: rgba(0, 0, 0, 0.5); }
-        #login .login-sign-info form div input, #sign .login-sign-info form div input {
+        #login .login-sign-info form div input {
           width: 100%;
           height: 80px;
           padding: 15px 0 0 30px;
@@ -197,7 +341,7 @@ section.testimonials .button {
           border: none;
           font-size: 16px;
           color: #80713E; }
-      #login .login-sign-info form .profile-picture, #sign .login-sign-info form .profile-picture {
+      #login .login-sign-info form .profile-picture {
         width: 100%;
         height: 80px;
         border-radius: 10px;
@@ -207,12 +351,12 @@ section.testimonials .button {
         -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
         -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
         box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75); }
-        #login .login-sign-info form .profile-picture label, #sign .login-sign-info form .profile-picture label {
+        #login .login-sign-info form .profile-picture label {
           position: absolute;
           margin: 15px 0 0 30px;
           font-size: 10px;
           color: rgba(0, 0, 0, 0.5); }
-        #login .login-sign-info form .profile-picture input, #sign .login-sign-info form .profile-picture input {
+        #login .login-sign-info form .profile-picture input {
           width: 100%;
           height: 80px;
           padding: 35px 0 0 20px;
@@ -220,7 +364,7 @@ section.testimonials .button {
           border: none;
           font-size: 16px;
           color: #80713E; }
-      #login .login-sign-info form .button-form, #sign .login-sign-info form .button-form {
+      #login .login-sign-info form .button-form {
         width: 100%;
         height: 60px;
         border-radius: 10px;
@@ -232,21 +376,15 @@ section.testimonials .button {
         font-size: 16px;
         color: #80713E;
         z-index: 1; }
-    #login .login-sign-info .register, #sign .login-sign-info .register {
+    #login .login-sign-info .register {
       margin: 10px auto;
       font-size: 12px;
       color: #80713E;
       width: 78%;
       text-align: center; }
-      #login .login-sign-info .register p, #sign .login-sign-info .register p {
+      #login .login-sign-info .register p {
         display: inline;
         margin-right: 5px; }
-
-#sign {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-star;
-  align-items: center; }
 
 #private-main, .search-results, .artist-page, .album-page, .playlist-song-collection-page, .playlist-collection-page, #profile {
   width: 100%;
@@ -423,6 +561,70 @@ footer {
           footer nav ul li .big-icon img {
             width: 16px;
             height: 16px; }
+
+.search-hidden-navbar {
+  width: 100%;
+  height: 100vh;
+  background-color: #FF8178;
+  position: fixed;
+  top: 100vh;
+  left: 0;
+  transition: top 0.5s;
+  -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4); }
+  .search-hidden-navbar a {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .search-hidden-navbar a img {
+      width: 30px;
+      height: 30px;
+      transform: rotate(45deg); }
+  .search-hidden-navbar h2 {
+    color: white;
+    margin: 30vh auto 30px auto;
+    font-size: 20px;
+    width: 80%; }
+  .search-hidden-navbar form {
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+    height: 60px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 20px 77px -20px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 20px 77px -20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 20px 77px -20px rgba(0, 0, 0, 0.4);
+    border: none;
+    font-size: 16px;
+    color: #80713E;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-star;
+    align-items: center; }
+    .search-hidden-navbar form input {
+      width: 80%;
+      height: 60px;
+      padding: 0 0 0 30px;
+      background: rgba(255, 255, 255, 0);
+      border: none;
+      font-size: 14px;
+      color: #80713E; }
+    .search-hidden-navbar form button {
+      width: 20%;
+      height: 60px; }
+      .search-hidden-navbar form button img {
+        height: 20px;
+        width: auto; }
+
+.show-search {
+  top: 0; }
 
 .playlist-collection {
   width: 100%;
