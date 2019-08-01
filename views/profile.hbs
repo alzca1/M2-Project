@@ -1,37 +1,75 @@
 
 <section id="profile">
-  <header>
-    <div>
-      <img src="{{newUser.picture}}" alt="{{newUser.username}}">
-    </div>
-    <a href="javascript: history.go(-1);location.replace(document.referrer)">go back</a>
-    <h1>{{data.newUser.username}} Profile page</h1>
-  </header>
+
+  <a class="go-back" href="javascript: history.go(-1);location.replace(document.referrer)">
+    <img src="../images/arrow-left-color.png">
+  </a>
+
+  <div class="big-image">
+    <img src="{{newUser.picture}}" alt="{{newUser.username}}">
+  </div>
 
   <section class="profile-stats">
-    <ul>
-      <li>Followers: {{newUser.followers.length}}</li>
-      <li>Followings: {{newUser.followed.length}}</li>
-      <li><a href="/playlistCollection">Playlists: {{newUser.playlists.length}}</a></li>
-    </ul>
-  </section>
-  <section class="profile-info">
-    <ul>
-      <li>{{newUser.location.name}}</li>
-      <li>{{newUser.email}}</li>
-      <li>Artists: {{newUser.artists.length}}</li>
-      <li>Albums: {{newUser.albums.length}}</li>
-      <li>Tracks: {{newUser.tracks.length}}</li>
-    </ul>
-  </section>
-  <section>
-    <a href="/modifyProfile/{{newUser._id}}">Edit</a>
-    <form action="/profile/logout" method="POST">
-            <button type="submit">Logout</button>
-          </form>
-  </section>
+    <div>
+      <p>Profile</p>
+      <h1 class="title">{{newUser.username}}</h1>
+      <a class="edit" href="/modifyProfile/{{newUser._id}}">
+        <img src="../images/edit-white.png" alt="edit icon">
+      </a>
+    </div>
+    <hr class="line">
+    <section class="profile-info">
+      <ul>
+        <li>
+          <a href="/playlistCollection">
+            <p>Number of Playlists</p>
+            <h2>{{newUser.playlists.length}}</h2>
+          </a>
+        </li>
+        <li>
+          <a href="/playlistCollection">
+            <p>Favourite Artists</p>
+            <h2>{{newUser.artists.length}}</h2>
+          </a>
+        </li>
+        <li>
+          <a href="/playlistCollection">
+            <p>Favourite Albums</p>
+            <h2>{{newUser.albums.length}}</h2>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <hr class="line">
+    <section class="profile-info-2">
+      <ul>
+        <li>
+          <p>Location</p>
+          <h2>{{newUser.location.name}}</h2>
+        </li>
+        </li>
+        <li>
+          <p>Email</p>
+          <h2>{{newUser.email}}</h2>
+        </li>
+      </ul>
+    </section>
+    <section class="logout">
+      <form action="/profile/logout" method="POST">
+        <button type="submit">Logout</button>
+      </form>
+    </section>
 
 </section>
+
+{{> userNavbar}}
+
+
+
+
+
+  
+   
 
 
 

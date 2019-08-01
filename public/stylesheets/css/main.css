@@ -93,6 +93,16 @@ section.testimonials .button {
   #main-homepage .homepage-info {
     width: 80%;
     height: auto; }
+    #main-homepage .homepage-info .logo {
+      width: 200px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 50px auto; }
+      #main-homepage .homepage-info .logo img {
+        width: 100%;
+        height: auto; }
     #main-homepage .homepage-info h1 {
       font-size: 20px;
       color: #80713E; }
@@ -115,7 +125,136 @@ section.testimonials .button {
         padding-top: 20px;
         font-size: 16px; }
 
-#login, #sign {
+#sign {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: linear-gradient(135deg, #FFD9B9, #FFF6AD, #FFABD1);
+  background-size: 600% 600%;
+  -webkit-animation: welcome-section 7s ease infinite;
+  -moz-animation: welcome-section 7s ease infinite;
+  -o-animation: welcome-section 7s ease infinite;
+  animation: welcome-section 7s ease infinite; }
+
+@keyframes welcome-section {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+  #sign .go-back {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 60px;
+    height: 50px;
+    background-color: white;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #sign .go-back img {
+      height: 20px;
+      margin-left: -5px; }
+  #sign .login-sign-info {
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px; }
+    #sign .login-sign-info .logo {
+      width: 200px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 50px auto; }
+      #sign .login-sign-info .logo img {
+        width: 100%;
+        height: auto; }
+    #sign .login-sign-info .validation {
+      color: red;
+      width: 80%;
+      margin: 20px auto;
+      text-align: center; }
+    #sign .login-sign-info form {
+      width: 80%;
+      height: auto;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-star;
+      align-items: center; }
+      #sign .login-sign-info form div {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75); }
+        #sign .login-sign-info form div label {
+          position: absolute;
+          margin: 15px 0 0 30px;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5); }
+        #sign .login-sign-info form div input {
+          width: 100%;
+          height: 80px;
+          padding: 15px 0 0 30px;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+          font-size: 16px;
+          color: #80713E; }
+      #sign .login-sign-info form .profile-picture {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75); }
+        #sign .login-sign-info form .profile-picture label {
+          position: absolute;
+          margin: 15px 0 0 30px;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5); }
+        #sign .login-sign-info form .profile-picture input {
+          width: 100%;
+          height: 80px;
+          padding: 35px 0 0 20px;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+          font-size: 16px;
+          color: #80713E; }
+      #sign .login-sign-info form .button-form {
+        width: 100%;
+        height: 60px;
+        border-radius: 10px;
+        background: white;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        border: none;
+        font-size: 16px;
+        color: #80713E;
+        z-index: 1; }
+    #sign .login-sign-info .register {
+      margin: 10px auto;
+      font-size: 12px;
+      color: #80713E;
+      width: 78%;
+      text-align: center; }
+      #sign .login-sign-info .register p {
+        display: inline;
+        margin-right: 5px; }
+
+#login {
   width: 100%;
   min-height: 100vh;
   height: auto;
@@ -137,7 +276,7 @@ section.testimonials .button {
     background-position: 100% 50%; }
   100% {
     background-position: 0% 50%; } }
-  #login .go-back, #sign .go-back {
+  #login .go-back {
     position: absolute;
     left: 0;
     top: 20px;
@@ -150,23 +289,28 @@ section.testimonials .button {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-    #login .go-back img, #sign .go-back img {
+    #login .go-back img {
       height: 20px;
       margin-left: -5px; }
-  #login .login-sign-info, #sign .login-sign-info {
+  #login .login-sign-info {
     width: 100%;
     margin-top: -100px; }
-    #login .login-sign-info .logo, #sign .login-sign-info .logo {
-      width: 100px;
-      height: 60px;
-      background-color: aqua;
-      margin: 20px auto 50px auto; }
-    #login .login-sign-info .validation, #sign .login-sign-info .validation {
+    #login .login-sign-info .logo {
+      width: 200px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 50px auto; }
+      #login .login-sign-info .logo img {
+        width: 100%;
+        height: auto; }
+    #login .login-sign-info .validation {
       color: red;
       width: 80%;
       margin: 20px auto;
       text-align: center; }
-    #login .login-sign-info form, #sign .login-sign-info form {
+    #login .login-sign-info form {
       width: 80%;
       height: auto;
       margin: auto;
@@ -174,7 +318,7 @@ section.testimonials .button {
       flex-direction: column;
       justify-content: flex-star;
       align-items: center; }
-      #login .login-sign-info form div, #sign .login-sign-info form div {
+      #login .login-sign-info form div {
         width: 100%;
         height: 80px;
         border-radius: 10px;
@@ -184,12 +328,12 @@ section.testimonials .button {
         -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
         -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
         box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75); }
-        #login .login-sign-info form div label, #sign .login-sign-info form div label {
+        #login .login-sign-info form div label {
           position: absolute;
           margin: 15px 0 0 30px;
           font-size: 10px;
           color: rgba(0, 0, 0, 0.5); }
-        #login .login-sign-info form div input, #sign .login-sign-info form div input {
+        #login .login-sign-info form div input {
           width: 100%;
           height: 80px;
           padding: 15px 0 0 30px;
@@ -197,7 +341,30 @@ section.testimonials .button {
           border: none;
           font-size: 16px;
           color: #80713E; }
-      #login .login-sign-info form .button-form, #sign .login-sign-info form .button-form {
+      #login .login-sign-info form .profile-picture {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75); }
+        #login .login-sign-info form .profile-picture label {
+          position: absolute;
+          margin: 15px 0 0 30px;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5); }
+        #login .login-sign-info form .profile-picture input {
+          width: 100%;
+          height: 80px;
+          padding: 35px 0 0 20px;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+          font-size: 16px;
+          color: #80713E; }
+      #login .login-sign-info form .button-form {
         width: 100%;
         height: 60px;
         border-radius: 10px;
@@ -209,42 +376,36 @@ section.testimonials .button {
         font-size: 16px;
         color: #80713E;
         z-index: 1; }
-    #login .login-sign-info .register, #sign .login-sign-info .register {
+    #login .login-sign-info .register {
       margin: 10px auto;
       font-size: 12px;
       color: #80713E;
       width: 78%;
       text-align: center; }
-      #login .login-sign-info .register p, #sign .login-sign-info .register p {
+      #login .login-sign-info .register p {
         display: inline;
         margin-right: 5px; }
 
-#sign {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-star;
-  align-items: center; }
-
-#private-main, .search-results, .artist-page, .album-page, .playlist-song-collection-page, .playlist-collection-page {
+#private-main, .search-results, .artist-page, .album-page, .playlist-song-collection-page, .playlist-collection-page, #profile {
   width: 100%;
   height: auto;
   min-height: 100vh;
   background-color: #f5f5f5; }
-  #private-main .title, .search-results .title, .artist-page .title, .album-page .title, .playlist-song-collection-page .title, .playlist-collection-page .title {
+  #private-main .title, .search-results .title, .artist-page .title, .album-page .title, .playlist-song-collection-page .title, .playlist-collection-page .title, #profile .title {
     width: 78%;
     margin: 0 auto;
     color: #80713E;
     padding: 30px 0; }
-    #private-main .title p, .search-results .title p, .artist-page .title p, .album-page .title p, .playlist-song-collection-page .title p, .playlist-collection-page .title p {
+    #private-main .title p, .search-results .title p, .artist-page .title p, .album-page .title p, .playlist-song-collection-page .title p, .playlist-collection-page .title p, #profile .title p {
       font-size: 10px; }
-    #private-main .title h1, .search-results .title h1, .artist-page .title h1, .album-page .title h1, .playlist-song-collection-page .title h1, .playlist-collection-page .title h1 {
+    #private-main .title h1, .search-results .title h1, .artist-page .title h1, .album-page .title h1, .playlist-song-collection-page .title h1, .playlist-collection-page .title h1, #profile .title h1 {
       font-size: 25px;
       margin: 0; }
-  #private-main .search-bar, .search-results .search-bar, .artist-page .search-bar, .album-page .search-bar, .playlist-song-collection-page .search-bar, .playlist-collection-page .search-bar {
+  #private-main .search-bar, .search-results .search-bar, .artist-page .search-bar, .album-page .search-bar, .playlist-song-collection-page .search-bar, .playlist-collection-page .search-bar, #profile .search-bar {
     width: 80%;
     height: 50px;
     margin: 0 auto; }
-    #private-main .search-bar form, .search-results .search-bar form, .artist-page .search-bar form, .album-page .search-bar form, .playlist-song-collection-page .search-bar form, .playlist-collection-page .search-bar form {
+    #private-main .search-bar form, .search-results .search-bar form, .artist-page .search-bar form, .album-page .search-bar form, .playlist-song-collection-page .search-bar form, .playlist-collection-page .search-bar form, #profile .search-bar form {
       background-color: white;
       width: 100%;
       height: 50px;
@@ -260,7 +421,7 @@ section.testimonials .button {
       flex-direction: row;
       justify-content: flex-star;
       align-items: center; }
-      #private-main .search-bar form input, .search-results .search-bar form input, .artist-page .search-bar form input, .album-page .search-bar form input, .playlist-song-collection-page .search-bar form input, .playlist-collection-page .search-bar form input {
+      #private-main .search-bar form input, .search-results .search-bar form input, .artist-page .search-bar form input, .album-page .search-bar form input, .playlist-song-collection-page .search-bar form input, .playlist-collection-page .search-bar form input, #profile .search-bar form input {
         width: 80%;
         height: 50px;
         padding: 0 0 0 30px;
@@ -268,40 +429,40 @@ section.testimonials .button {
         border: none;
         font-size: 14px;
         color: #80713E; }
-      #private-main .search-bar form button, .search-results .search-bar form button, .artist-page .search-bar form button, .album-page .search-bar form button, .playlist-song-collection-page .search-bar form button, .playlist-collection-page .search-bar form button {
+      #private-main .search-bar form button, .search-results .search-bar form button, .artist-page .search-bar form button, .album-page .search-bar form button, .playlist-song-collection-page .search-bar form button, .playlist-collection-page .search-bar form button, #profile .search-bar form button {
         width: 20%;
         height: 50px; }
-        #private-main .search-bar form button img, .search-results .search-bar form button img, .artist-page .search-bar form button img, .album-page .search-bar form button img, .playlist-song-collection-page .search-bar form button img, .playlist-collection-page .search-bar form button img {
+        #private-main .search-bar form button img, .search-results .search-bar form button img, .artist-page .search-bar form button img, .album-page .search-bar form button img, .playlist-song-collection-page .search-bar form button img, .playlist-collection-page .search-bar form button img, #profile .search-bar form button img {
           height: 20px;
           width: auto; }
-  #private-main .covers, .search-results .covers, .artist-page .covers, .album-page .covers, .playlist-song-collection-page .covers, .playlist-collection-page .covers {
+  #private-main .covers, .search-results .covers, .artist-page .covers, .album-page .covers, .playlist-song-collection-page .covers, .playlist-collection-page .covers, #profile .covers {
     width: 80%;
     height: 180px;
     margin: 25px 0 20px 10%;
     position: relative; }
-    #private-main .covers .covers-text, .search-results .covers .covers-text, .artist-page .covers .covers-text, .album-page .covers .covers-text, .playlist-song-collection-page .covers .covers-text, .playlist-collection-page .covers .covers-text {
+    #private-main .covers .covers-text, .search-results .covers .covers-text, .artist-page .covers .covers-text, .album-page .covers .covers-text, .playlist-song-collection-page .covers .covers-text, .playlist-collection-page .covers .covers-text, #profile .covers .covers-text {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%; }
-      #private-main .covers .covers-text h2, .search-results .covers .covers-text h2, .artist-page .covers .covers-text h2, .album-page .covers .covers-text h2, .playlist-song-collection-page .covers .covers-text h2, .playlist-collection-page .covers .covers-text h2 {
+      #private-main .covers .covers-text h2, .search-results .covers .covers-text h2, .artist-page .covers .covers-text h2, .album-page .covers .covers-text h2, .playlist-song-collection-page .covers .covers-text h2, .playlist-collection-page .covers .covers-text h2, #profile .covers .covers-text h2 {
         font-size: 16px;
         width: auto;
         color: #80713E; }
-      #private-main .covers .covers-text .all-covers, .search-results .covers .covers-text .all-covers, .artist-page .covers .covers-text .all-covers, .album-page .covers .covers-text .all-covers, .playlist-song-collection-page .covers .covers-text .all-covers, .playlist-collection-page .covers .covers-text .all-covers {
+      #private-main .covers .covers-text .all-covers, .search-results .covers .covers-text .all-covers, .artist-page .covers .covers-text .all-covers, .album-page .covers .covers-text .all-covers, .playlist-song-collection-page .covers .covers-text .all-covers, .playlist-collection-page .covers .covers-text .all-covers, #profile .covers .covers-text .all-covers {
         top: 0;
         width: auto;
         font-size: 12px;
         text-decoration: none;
         color: rgba(0, 0, 0, 0.35); }
-    #private-main .covers .playlist-slider, .search-results .covers .playlist-slider, .artist-page .covers .playlist-slider, .album-page .covers .playlist-slider, .playlist-song-collection-page .covers .playlist-slider, .playlist-collection-page .covers .playlist-slider {
+    #private-main .covers .playlist-slider, .search-results .covers .playlist-slider, .artist-page .covers .playlist-slider, .album-page .covers .playlist-slider, .playlist-song-collection-page .covers .playlist-slider, .playlist-collection-page .covers .playlist-slider, #profile .covers .playlist-slider {
       width: auto;
       height: 120px;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       margin-top: 10px; }
-      #private-main .covers .playlist-slider .cover-article, .search-results .covers .playlist-slider .cover-article, .artist-page .covers .playlist-slider .cover-article, .album-page .covers .playlist-slider .cover-article, .playlist-song-collection-page .covers .playlist-slider .cover-article, .playlist-collection-page .covers .playlist-slider .cover-article {
+      #private-main .covers .playlist-slider .cover-article, .search-results .covers .playlist-slider .cover-article, .artist-page .covers .playlist-slider .cover-article, .album-page .covers .playlist-slider .cover-article, .playlist-song-collection-page .covers .playlist-slider .cover-article, .playlist-collection-page .covers .playlist-slider .cover-article, #profile .covers .playlist-slider .cover-article {
         width: 110px;
         height: 140px;
         border-radius: 10px;
@@ -310,12 +471,12 @@ section.testimonials .button {
         -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
         -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
         box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4); }
-        #private-main .covers .playlist-slider .cover-article a, .search-results .covers .playlist-slider .cover-article a, .artist-page .covers .playlist-slider .cover-article a, .album-page .covers .playlist-slider .cover-article a, .playlist-song-collection-page .covers .playlist-slider .cover-article a, .playlist-collection-page .covers .playlist-slider .cover-article a {
+        #private-main .covers .playlist-slider .cover-article a, .search-results .covers .playlist-slider .cover-article a, .artist-page .covers .playlist-slider .cover-article a, .album-page .covers .playlist-slider .cover-article a, .playlist-song-collection-page .covers .playlist-slider .cover-article a, .playlist-collection-page .covers .playlist-slider .cover-article a, #profile .covers .playlist-slider .cover-article a {
           width: 110px;
           height: 140px;
           position: relative;
           display: block; }
-          #private-main .covers .playlist-slider .cover-article a div, .search-results .covers .playlist-slider .cover-article a div, .artist-page .covers .playlist-slider .cover-article a div, .album-page .covers .playlist-slider .cover-article a div, .playlist-song-collection-page .covers .playlist-slider .cover-article a div, .playlist-collection-page .covers .playlist-slider .cover-article a div {
+          #private-main .covers .playlist-slider .cover-article a div, .search-results .covers .playlist-slider .cover-article a div, .artist-page .covers .playlist-slider .cover-article a div, .album-page .covers .playlist-slider .cover-article a div, .playlist-song-collection-page .covers .playlist-slider .cover-article a div, .playlist-collection-page .covers .playlist-slider .cover-article a div, #profile .covers .playlist-slider .cover-article a div {
             width: 110px;
             height: 140px;
             border-radius: 10px;
@@ -323,21 +484,21 @@ section.testimonials .button {
             justify-content: center;
             align-items: center;
             overflow: hidden; }
-            #private-main .covers .playlist-slider .cover-article a div img, .search-results .covers .playlist-slider .cover-article a div img, .artist-page .covers .playlist-slider .cover-article a div img, .album-page .covers .playlist-slider .cover-article a div img, .playlist-song-collection-page .covers .playlist-slider .cover-article a div img, .playlist-collection-page .covers .playlist-slider .cover-article a div img {
+            #private-main .covers .playlist-slider .cover-article a div img, .search-results .covers .playlist-slider .cover-article a div img, .artist-page .covers .playlist-slider .cover-article a div img, .album-page .covers .playlist-slider .cover-article a div img, .playlist-song-collection-page .covers .playlist-slider .cover-article a div img, .playlist-collection-page .covers .playlist-slider .cover-article a div img, #profile .covers .playlist-slider .cover-article a div img {
               width: auto;
               height: 100%; }
-          #private-main .covers .playlist-slider .cover-article a h3, .search-results .covers .playlist-slider .cover-article a h3, .artist-page .covers .playlist-slider .cover-article a h3, .album-page .covers .playlist-slider .cover-article a h3, .playlist-song-collection-page .covers .playlist-slider .cover-article a h3, .playlist-collection-page .covers .playlist-slider .cover-article a h3 {
+          #private-main .covers .playlist-slider .cover-article a h3, .search-results .covers .playlist-slider .cover-article a h3, .artist-page .covers .playlist-slider .cover-article a h3, .album-page .covers .playlist-slider .cover-article a h3, .playlist-song-collection-page .covers .playlist-slider .cover-article a h3, .playlist-collection-page .covers .playlist-slider .cover-article a h3, #profile .covers .playlist-slider .cover-article a h3 {
             font-size: 12px;
             color: white;
             text-decoration: none;
             position: absolute;
             bottom: 0px;
             left: 10px; }
-      #private-main .covers .playlist-slider .new-one a, .search-results .covers .playlist-slider .new-one a, .artist-page .covers .playlist-slider .new-one a, .album-page .covers .playlist-slider .new-one a, .playlist-song-collection-page .covers .playlist-slider .new-one a, .playlist-collection-page .covers .playlist-slider .new-one a {
+      #private-main .covers .playlist-slider .new-one a, .search-results .covers .playlist-slider .new-one a, .artist-page .covers .playlist-slider .new-one a, .album-page .covers .playlist-slider .new-one a, .playlist-song-collection-page .covers .playlist-slider .new-one a, .playlist-collection-page .covers .playlist-slider .new-one a, #profile .covers .playlist-slider .new-one a {
         display: flex;
         justify-content: center;
         align-items: center; }
-        #private-main .covers .playlist-slider .new-one a img, .search-results .covers .playlist-slider .new-one a img, .artist-page .covers .playlist-slider .new-one a img, .album-page .covers .playlist-slider .new-one a img, .playlist-song-collection-page .covers .playlist-slider .new-one a img, .playlist-collection-page .covers .playlist-slider .new-one a img {
+        #private-main .covers .playlist-slider .new-one a img, .search-results .covers .playlist-slider .new-one a img, .artist-page .covers .playlist-slider .new-one a img, .album-page .covers .playlist-slider .new-one a img, .playlist-song-collection-page .covers .playlist-slider .new-one a img, .playlist-collection-page .covers .playlist-slider .new-one a img, #profile .covers .playlist-slider .new-one a img {
           width: 40px;
           height: 40px;
           opacity: 0.6; }
@@ -400,6 +561,70 @@ footer {
           footer nav ul li .big-icon img {
             width: 16px;
             height: 16px; }
+
+.search-hidden-navbar {
+  width: 100%;
+  height: 100vh;
+  background-color: #FF8178;
+  position: fixed;
+  top: 100vh;
+  left: 0;
+  transition: top 0.5s;
+  -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4); }
+  .search-hidden-navbar a {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .search-hidden-navbar a img {
+      width: 30px;
+      height: 30px;
+      transform: rotate(45deg); }
+  .search-hidden-navbar h2 {
+    color: white;
+    margin: 30vh auto 30px auto;
+    font-size: 20px;
+    width: 80%; }
+  .search-hidden-navbar form {
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+    height: 60px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 20px 77px -20px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 20px 77px -20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 20px 77px -20px rgba(0, 0, 0, 0.4);
+    border: none;
+    font-size: 16px;
+    color: #80713E;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-star;
+    align-items: center; }
+    .search-hidden-navbar form input {
+      width: 80%;
+      height: 60px;
+      padding: 0 0 0 30px;
+      background: rgba(255, 255, 255, 0);
+      border: none;
+      font-size: 14px;
+      color: #80713E; }
+    .search-hidden-navbar form button {
+      width: 20%;
+      height: 60px; }
+      .search-hidden-navbar form button img {
+        height: 20px;
+        width: auto; }
+
+.show-search {
+  top: 0; }
 
 .playlist-collection {
   width: 100%;
@@ -1060,3 +1285,273 @@ footer {
             width: 8px;
             height: 12px;
             margin-left: 2px; }
+
+#profile {
+  background-color: #f5f5f5; }
+  #profile .go-back {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 60px;
+    height: 50px;
+    background-color: white;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #profile .go-back img {
+      height: 20px;
+      margin-left: -5px; }
+  #profile .big-image {
+    width: 100%;
+    height: 55vh;
+    background-color: red;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; }
+    #profile .big-image img {
+      width: auto;
+      height: 100%;
+      object-fit: cover; }
+  #profile .profile-stats {
+    width: 100%;
+    height: auto;
+    background-color: #f5f5f5;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: -15px;
+    z-index: 3;
+    position: absolute;
+    padding-bottom: 80px;
+    -webkit-box-shadow: 0px -2px 42px -17px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px -2px 42px -17px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -2px 42px -17px rgba(0, 0, 0, 0.75); }
+    #profile .profile-stats div {
+      width: 90%;
+      height: 50px;
+      margin: 20px auto 20px auto;
+      text-align: center;
+      position: relative; }
+      #profile .profile-stats div p {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.5);
+        margin: 0; }
+      #profile .profile-stats div .title {
+        font-size: 25px;
+        padding: 0;
+        margin-bottom: 10px; }
+      #profile .profile-stats div .edit {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #FF8178;
+        -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; }
+        #profile .profile-stats div .edit img {
+          width: 20px;
+          height: 20px; }
+    #profile .profile-stats .line {
+      width: 200px;
+      height: 2px;
+      border: none;
+      background-color: rgba(0, 0, 0, 0.1); }
+    #profile .profile-stats .profile-info {
+      width: 90%;
+      height: auto;
+      margin: 30px auto; }
+      #profile .profile-stats .profile-info ul {
+        padding: 0;
+        width: 70%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto; }
+        #profile .profile-stats .profile-info ul li {
+          list-style: none; }
+          #profile .profile-stats .profile-info ul li a {
+            text-decoration: none; }
+            #profile .profile-stats .profile-info ul li a p {
+              font-size: 12px;
+              color: rgba(0, 0, 0, 0.5);
+              margin: 0;
+              width: 70px;
+              line-height: 1; }
+            #profile .profile-stats .profile-info ul li a h2 {
+              font-size: 20px;
+              color: #80713E;
+              margin: 5px 0 0 0; }
+    #profile .profile-stats .profile-info-2 {
+      width: 90%;
+      height: auto;
+      margin: 30px auto; }
+      #profile .profile-stats .profile-info-2 ul {
+        padding: 0;
+        width: 70%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center; }
+        #profile .profile-stats .profile-info-2 ul li {
+          list-style: none;
+          display: block;
+          margin-bottom: 30px; }
+          #profile .profile-stats .profile-info-2 ul li p {
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+            width: 70px;
+            line-height: 1;
+            text-align: center; }
+          #profile .profile-stats .profile-info-2 ul li h2 {
+            font-size: 16px;
+            color: #80713E;
+            margin: 5px auto 0 auto;
+            line-height: 1; }
+    #profile .profile-stats .logout {
+      width: 100px;
+      height: 40px;
+      margin: 20px auto; }
+      #profile .profile-stats .logout form {
+        width: 100px;
+        height: 40px;
+        margin: 0 auto; }
+        #profile .profile-stats .logout form button {
+          width: 100px;
+          height: 40px;
+          padding: 10px 20px;
+          border-radius: 20px;
+          background-color: #FF8178;
+          color: white;
+          border: none;
+          margin: 0 auto;
+          -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+          -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2); }
+
+#modify-profile {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  #modify-profile .go-back {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 60px;
+    height: 50px;
+    background-color: white;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #modify-profile .go-back img {
+      height: 20px;
+      margin-left: -5px; }
+  #modify-profile section {
+    width: 100%;
+    margin-top: -30px; }
+    #modify-profile section .logo {
+      width: 100px;
+      height: 60px;
+      background-color: aqua;
+      margin: 20px auto 50px auto; }
+    #modify-profile section .validation {
+      color: red;
+      width: 80%;
+      margin: 20px auto;
+      text-align: center; }
+    #modify-profile section form {
+      width: 80%;
+      height: auto;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-star;
+      align-items: center; }
+      #modify-profile section form div {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4); }
+        #modify-profile section form div label {
+          position: absolute;
+          margin: 15px 0 0 30px;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5); }
+        #modify-profile section form div input {
+          width: 100%;
+          height: 80px;
+          padding: 15px 0 0 30px;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+          font-size: 16px;
+          color: #80713E; }
+      #modify-profile section form .profile-picture {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4); }
+        #modify-profile section form .profile-picture label {
+          position: absolute;
+          margin: 15px 0 0 30px;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5); }
+        #modify-profile section form .profile-picture input {
+          width: 100%;
+          height: 80px;
+          padding: 35px 0 0 20px;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+          font-size: 16px;
+          color: #80713E; }
+      #modify-profile section form .button-form {
+        width: 150px;
+        height: 50px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        background-color: #FF8178;
+        color: white;
+        border: none;
+        margin: 0 auto;
+        font-size: 16px;
+        -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2); }
+    #modify-profile section .register {
+      margin: 10px auto;
+      font-size: 12px;
+      color: #80713E;
+      width: 78%;
+      text-align: center; }
+      #modify-profile section .register p {
+        display: inline;
+        margin-right: 5px; }

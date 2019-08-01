@@ -2,9 +2,9 @@
   <a class="go-back" href="/"><img src="../images/arrow-left-color.png"></a>
 
   <section class="login-sign-info">
-    <section class="logo">
-      {{!-- <img src="" alt=""> --}}
-    </section>
+    <div class="logo"> 
+      <img src="../images/logo-mini-flow.png" alt="logo mini flow">
+    </div>
 
     {{#if passwordformat.length}}
       <p class="validation">
@@ -72,7 +72,7 @@
           <label for="location">Location</label>
           <input type="text" name="location" id="location" required placeholder="Location"> 
         </div>
-        <div>
+        <div class="profile-picture">
           <label for="picture">Profile picture</label>
           <input type="file" name="picture" id="picture" > 
         </div>
