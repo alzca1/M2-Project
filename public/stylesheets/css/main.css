@@ -197,6 +197,29 @@ section.testimonials .button {
           border: none;
           font-size: 16px;
           color: #80713E; }
+      #login .login-sign-info form .profile-picture, #sign .login-sign-info form .profile-picture {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75);
+        box-shadow: 0px 20px 77px -23px rgba(171, 135, 5, 0.75); }
+        #login .login-sign-info form .profile-picture label, #sign .login-sign-info form .profile-picture label {
+          position: absolute;
+          margin: 15px 0 0 30px;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5); }
+        #login .login-sign-info form .profile-picture input, #sign .login-sign-info form .profile-picture input {
+          width: 100%;
+          height: 80px;
+          padding: 35px 0 0 20px;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+          font-size: 16px;
+          color: #80713E; }
       #login .login-sign-info form .button-form, #sign .login-sign-info form .button-form {
         width: 100%;
         height: 60px;
@@ -1215,3 +1238,118 @@ footer {
           -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
           -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2); }
+
+#modify-profile {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  #modify-profile .go-back {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 60px;
+    height: 50px;
+    background-color: white;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #modify-profile .go-back img {
+      height: 20px;
+      margin-left: -5px; }
+  #modify-profile section {
+    width: 100%;
+    margin-top: -30px; }
+    #modify-profile section .logo {
+      width: 100px;
+      height: 60px;
+      background-color: aqua;
+      margin: 20px auto 50px auto; }
+    #modify-profile section .validation {
+      color: red;
+      width: 80%;
+      margin: 20px auto;
+      text-align: center; }
+    #modify-profile section form {
+      width: 80%;
+      height: auto;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-star;
+      align-items: center; }
+      #modify-profile section form div {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4); }
+        #modify-profile section form div label {
+          position: absolute;
+          margin: 15px 0 0 30px;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5); }
+        #modify-profile section form div input {
+          width: 100%;
+          height: 80px;
+          padding: 15px 0 0 30px;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+          font-size: 16px;
+          color: #80713E; }
+      #modify-profile section form .profile-picture {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4); }
+        #modify-profile section form .profile-picture label {
+          position: absolute;
+          margin: 15px 0 0 30px;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5); }
+        #modify-profile section form .profile-picture input {
+          width: 100%;
+          height: 80px;
+          padding: 35px 0 0 20px;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+          font-size: 16px;
+          color: #80713E; }
+      #modify-profile section form .button-form {
+        width: 150px;
+        height: 50px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        background-color: #FF8178;
+        color: white;
+        border: none;
+        margin: 0 auto;
+        font-size: 16px;
+        -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2); }
+    #modify-profile section .register {
+      margin: 10px auto;
+      font-size: 12px;
+      color: #80713E;
+      width: 78%;
+      text-align: center; }
+      #modify-profile section .register p {
+        display: inline;
+        margin-right: 5px; }

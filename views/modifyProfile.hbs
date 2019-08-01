@@ -1,63 +1,81 @@
 <section id="modify-profile">
 
-    <a class="go-back" href="/profile">
+  <a class="go-back" href="/profile">
     <img src="../images/arrow-left-color.png">
   </a>
 
-  <form action="/modifyProfile/{{data.user._id}}/edit" method="POST" enctype="multipart/form-data">
-    {{#if formData.length}}
-      {{#each formData}}
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" required placeholder="email" value="{{this.email}}"> 
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required placeholder="Password">
-        <label for="location">Location</label>
-        <input type="text" name="location" id="location" required placeholder="Location" value="{{this.location}}">
-        <label for="picture">Profile Picture</label>
-        <input type="file" name="picture" id="picture" > 
-      
-      {{/each}}
-    {{else}}
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email" required placeholder="email" value="{{data.user.email}}"> 
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" required placeholder="Password" value="{{data.user.password}}">
-      <label for="location">Location</label>
-      <input type="text" name="location" id="location" required placeholder="Location" value="{{data.user.location.name}}"> 
-      <label for="picture">Profile Picture</label>
-      <input type="file" name="picture" id="picture" > 
-      
+  <section>
+      {{#if passwordformat.length}}
+    <p class="validation">
+      {{#each passwordformat}}{{this}}{{/each}}
+    </p>
     {{/if}}
-    <button type="submit">Update</button>
-  </form>
 
-  {{#if passwordformat.length}}
-  <p class="validation">
-    {{#each passwordformat}}{{this}}{{/each}}
-  </p>
-  {{/if}}
+    {{#if usernameExistent.length}}
+    <p class="validation">
+      {{#each usernameExistent}}{{this}}{{/each}}
+    </p>
+    {{/if}}
 
-  {{#if usernameExistent.length}}
-  <p class="validation">
-    {{#each usernameExistent}}{{this}}{{/each}}
-  </p>
-  {{/if}}
+    {{#if emailformat.length}}
+    <p class="validation">
+      {{#each emailformat}}{{this}}{{/each}}
+    </p>
+    {{/if}}
 
-  {{#if emailformat.length}}
-  <p class="validation">
-    {{#each emailformat}}{{this}}{{/each}}
-  </p>
-  {{/if}}
+    {{#if emailExistent.length}}
+    <p class="validation">
+      {{#each emailExistent}}{{this}}{{/each}}
+    </p>
+    {{/if}}
 
-  {{#if emailExistent.length}}
-  <p class="validation">
-    {{#each emailExistent}}{{this}}{{/each}}
-  </p>
-  {{/if}}
-  
+    <form action="/modifyProfile/{{data.user._id}}/edit" method="POST" enctype="multipart/form-data">
+      {{#if formData.length}}
+        {{#each formData}}
+          <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required placeholder="email" value="{{this.email}}"> 
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required placeholder="Password">
+          </div>
+          <div>
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location" required placeholder="Location" value="{{this.location}}">
+          </div>
+          <div class="profile-picture">
+            <label for="picture">Profile Picture</label>
+            <input type="file" name="picture" id="picture" > 
+          </div>
+        
+        {{/each}}
+      {{else}}
+        <div>
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" required placeholder="email" value="{{data.user.email}}"> 
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required placeholder="Password" value="{{data.user.password}}">
+        </div>
+        <div>
+          <label for="location">Location</label>
+          <input type="text" name="location" id="location" required placeholder="Location" value="{{data.user.location.name}}"> 
+        </div>
+        <div class="profile-picture">
+          <label for="picture">Profile Picture</label>
+          <input type="file" name="picture" id="picture" > 
+        </div>
+        
+      {{/if}}
+      <button class="button-form" type="submit">Update</button>
+    </form>
+
+  </section>
 
 </section>
 
-
+{{> userNavbar}}
 
 
