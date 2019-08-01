@@ -1,5 +1,9 @@
-
 <section id="modify-profile">
+
+    <a class="go-back" href="/profile">
+    <img src="../images/arrow-left-color.png">
+  </a>
+
   <form action="/modifyProfile/{{data.user._id}}/edit" method="POST" enctype="multipart/form-data">
     {{#if formData.length}}
       {{#each formData}}
