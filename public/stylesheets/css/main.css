@@ -1086,10 +1086,12 @@ footer {
     top: 0;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    overflow: hidden; }
     #profile .big-image img {
-      width: 100%;
-      height: auto; }
+      width: auto;
+      height: 100%;
+      object-fit: cover; }
   #profile .profile-stats {
     width: 100%;
     height: auto;

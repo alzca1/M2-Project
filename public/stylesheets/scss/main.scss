@@ -1358,10 +1358,12 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     img{
-      width:100%;
-      height:auto;
+      width:auto;
+      height:100%;
+      object-fit: cover;
     }
   }
   .profile-stats{
