@@ -4,6 +4,7 @@ const main = () => {
   const form = document.querySelector('.playlist-form');
   const anchor = document.querySelector('.add-playlist');
   const playlistCollection = document.querySelector('.playlist-slider');
+  const closeCreation = document.querySelector('.close-creation');
 
   // show playlist
   const showPlaylist = () => {
@@ -49,7 +50,6 @@ const main = () => {
 
       article.setAttribute('class', 'cover-article');
       button.setAttribute('id', newPlaylist._id);
-      button.innerText = 'go';
       const p = document.createElement('p');
       p.innerText = `${newPlaylist.name}`;
       article.appendChild(p);
@@ -62,7 +62,12 @@ const main = () => {
 
   anchor.addEventListener('click', async (event) => {
     event.preventDefault();
+    const section = document.querySelector('.playlist-collection');
+    section.classList.toggle('visible');
+  });
 
+  closeCreation.addEventListener('click', async (event) => {
+    event.preventDefault();
     const section = document.querySelector('.playlist-collection');
     section.classList.toggle('visible');
   });

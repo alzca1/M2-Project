@@ -612,9 +612,9 @@ section.testimonials .button {
           display:block;
 
           div{
+            border-radius:10px;
             width:110px;
             height: 140px;
-            border-radius:10px;
             display:flex;
             justify-content: center;
             align-items: center;
@@ -805,31 +805,48 @@ footer{
 .playlist-collection{
   width:100%;
   height:100vh;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #FF8178;
   z-index:1;
   position: fixed;
-  left:100%;
-  top:0;
+  top:100vh;
   @include flex-center($direction: row);
-  //transition: all 0.5s ease-out;
+  transition:  top 0.5s;
 
-  .visible{
-    left:0;
+  a{
+    position: absolute;
+    width:50px;
+    height:50px;
+    top: 30px;
+    right:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      width:30px;
+      height:30px;
+      transform: rotate(45deg);
+    }
   }
 
   .hidden-form{
     width:80%;
     height:auto;
     margin-top: -150px;      
+
+    h2{
+      color:white;
+      font-size:20px;
+    }
       
     .playlist-form{
       background-color: white;
       width: 100%;
       height:60px;
       border-radius: 10px;
-      -webkit-box-shadow: 0px 20px 77px -9px rgba(171, 135, 5,0.75);
-      -moz-box-shadow: 0px 20px 77px -9px rgba(171, 135, 5,0.75);
-      box-shadow: 0px 20px 77px -9px rgba(171, 135, 5,0.75);  
+      -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
+      box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
       border: none;
       font-size:16px;
       color: $main;
@@ -849,15 +866,18 @@ footer{
       button{
         width:20%;
         height: 60px;
-        background-color: #FFE37D;
         
         img{
-          height: 20px;
+          height: 30px;
           width: auto;
         }
       }
     }
   }
+}
+
+.visible{
+  top:0
 }
 
 .search-results{

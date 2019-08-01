@@ -59,11 +59,9 @@
     <div class="playlist-slider">
       {{#each artistsInfo}}
         <article class="cover-article">
-          {{!-- <a href="/playlistSongCollection/{{_id}}"> --}}
           <a href="#0">
             <div>
               <img src="{{this.images.0.url}}" alt="{{this.name}}">
-              {{!-- <a href = ="/artist/{{_id}}">this.name</a> --}}
             </div>
             <h3>{{name}}</h3>
           </a>
@@ -100,12 +98,17 @@
 
 
 <section class="playlist-collection">
+  <a class="close-creation" href="#0">
+    <img src="../images/add.png" alt="close search page form navbar">
+  </a>
   <section class="hidden-form">
     <h2>Create new playlist</h2>
     <form class="playlist-form">
       <label for="name"></label>
       <input type="text" name="name" id="name" placeholder="Name">
-      <button class="playlist-create" type="submit">Add playlist</button>
+      <button class="playlist-create" type="submit">
+        <img src="../images/rounded-add-color.png" alt="close search page form navbar"> 
+      </button>
     </form>
   </section>
 </section>
