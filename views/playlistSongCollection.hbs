@@ -1,25 +1,44 @@
- <a href="javascript: history.go(-1);location.replace(document.referrer)">go back</a>
-<h1> {{name}}</h1>
-{{#if error}}
-  <p>{{error.message}}</p>
+ <section class="playlist-song-collection-page">
 
-{{else}}
-{{#each trackInfo}}
+  <a class="go-back" href="javascript: history.go(-1);location.replace(document.referrer)">
+      <img src="../images/arrow-left-color.png">
+  </a>
+  
+  <div class="big-image">
+    <img src="{{albumData.images.[0].url}}" alt="{{albumData.name}}">
+  </div>
 
-      <article>
-        <p>{{this.name}}</p>
-        <p>{{this.id}}</p>
+  <section class="list-info-section">
+    <h1 class="name">{{albumData.name}}</h1>
+    <p class="date">{{albumData.release_date}}</p>
+
+    {{!-- <h1> {{name}}</h1> --}}
+      {{#if error}}
+        <p>{{error.message}}</p>
+        <p>Search for an Artist to add your first song!!!</p>
+        <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}/from/{{../artists.0.id}}" method="POST">
+          <button class="btn-add" type="submit">add song</button>
+        </form>
+      {{else}}
+        {{#each trackInfo}}
+
+      <article class="list-elements">
+        <div class="info-wrapper">
+          <h2>{{this.name}}</h2>
+          <p>{{this.artists.0.name}}</p>
+        </div>
         <audio controls name="media">
           <source src="{{this.preview_url}}" type="audio/mpeg">
         </audio>
-        <ul>
+        <a href="#0" class="add-button">
+          <img src="../images/more-info.png" alt="more info icon">
+        </a>
+        {{!-- <ul>
           <li>
             <form action="/album/{{this.id}}/like/{{this.albumId}}" method="POST">
               <button class="btn-like" type="submit">Like</button>
             </form>
-          </li>
-          <li> <button class="share-button">share</button></li>
-          <li> <a href="#0" class="add-button">add</a></li></ul>
+          </li> --}}
           {{!-- {{#each this.myPlaylist}}
             <p>{{../name}}</p>
             <li>{{this.name}}
@@ -28,15 +47,14 @@
               </form>
             </li>
           {{/each}} --}}
-      
-        <a href="/artist/{{artists.0.id}}">View Artist</a>  
+        {{!-- <a href="/artist/{{artists.0.id}}">View Artist</a>  
         <a href="/album/{{this.albumId}}">View album</a>
         <form class="playlist-form" action="/playlistSongCollection/{{playlist._id}}/delete/{{this.id}}" method="POST">
           <button class="playlist-create" type="submit">DELETE</button>
-        </form>
+        </form> --}}
 
       </article>
     {{/each}}
-
-    {{/if}}
-
+  {{/if}}
+ </section>
+ {{> userNavbar}}

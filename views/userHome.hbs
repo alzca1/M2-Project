@@ -20,14 +20,14 @@
       <a class="all-covers" href="/playlistCollection">View All</a>
     </section>
     <div class="playlist-slider">
-      <article class="cover-article">
-          <a href="/playlistSongCollection/my-favou">
-            <div>
-              <img src="" alt="">
-            </div>
-            <h3>favoritos</h3>
-          </a>
-        </article>
+      {{!-- <article class="cover-article">
+        <a href="/playlistSongCollection/my-favou">
+          <div>
+            <img src="" alt="">
+          </div>
+          <h3>favoritos</h3>
+        </a>
+      </article> --}}
 
       {{#each newUser.playlists}}
         <article class="cover-article">
@@ -39,13 +39,16 @@
           </a>
         </article>
       {{/each}}
-      <article class="cover-article">
-        <a class="add-playlist" href="#0">+</a>
+      <article class="cover-article new-one">
+        <a class="add-playlist" href="#0">
+          <img src="../images/rounded-add.png" alt="create playlist icon">
+        </a>
       </article>
     </div>
   </section>
 
 {{!-- poner artistas favoritos --}}
+  {{!-- {{#if artistInfo.length}} --}}
     <section class="covers">
     <section class="covers-text">
       <h2>My Artists</h2>
@@ -53,50 +56,44 @@
     </section>
     <div class="playlist-slider">
       {{#each artistsInfo}}
-    <article class="cover-article">
-      {{!-- <a href="/playlistSongCollection/{{_id}}"> --}}
-      <a href="#0">
-        <div>
-          <img src="{{this.images.0.url}}" alt="{{this.name}}">
-        </div>
-        <h3>{{name}}</h3>
-      </a>
-    </article>
-     {{/each}}
-    <article class="cover-article">
-      <a class="add-playlist" href="#0">+</a>
-    </article>
+        <article class="cover-article">
+          {{!-- <a href="/playlistSongCollection/{{_id}}"> --}}
+          <a href="#0">
+            <div>
+              <img src="{{this.images.0.url}}" alt="{{this.name}}">
+            </div>
+            <h3>{{name}}</h3>
+          </a>
+        </article>
+      {{/each}}
     </div>
   </section>
+  {{!-- {{/if}} --}}
 
 {{!-- poner albumes favoritos --}}
+  {{#if albumInfo.length}}
     <section class="covers">
-    <section class="covers-text">
-      <h2>My Albums</h2>
-      <a class="all-covers" href="#0">View All</a>
+      <section class="covers-text">
+        <h2>My Albums</h2>
+        <a class="all-covers" href="#0">View All</a>
+      </section>
+      <div class="playlist-slider">
+        {{#each albumsInfo}}
+          <article class="cover-article">
+            <a href="#0">
+              <div>
+                <img src="{{this.images.0.url}}" alt="{{this.name}}">
+              </div>
+              <h3>{{name}}</h3>
+            </a>
+          </article>
+      {{/each}}
+      </div>
     </section>
-    <div class="playlist-slider">
-      {{#each albumsInfo}}
-    <article class="cover-article">
-      <a href="#0">
-        <div>
-          <img src="{{this.images.0.url}}" alt="{{this.name}}">
-        </div>
-        <h3>{{name}}</h3>
-      </a>
-    </article>
-     {{/each}}
-    <article class="cover-article">
-      <a class="add-playlist" href="#0">+</a>
-    </article>
-    </div>
-  </section>
+  {{/if}}
 
-
-
-
-  {{> userNavbar}}
 </section>
+{{> userNavbar}}
 
 
 <section class="playlist-collection">

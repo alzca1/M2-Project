@@ -38,14 +38,12 @@
           </li> --}}
           {{!-- <li> <a href="#0" class="add-button">add</a></li> --}}
         {{!-- </ul> --}}
-          {{!-- {{#each this.myPlaylist}}
-            <p>{{../name}}</p>
-            <li>{{this.name}}
+          {{#each this.myPlaylist}}
               <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}/from/{{../artists.0.id}}" method="POST">
                 <button class="btn-add" type="submit">add song</button>
               </form>
             </li>
-          {{/each}} --}}
+          {{/each}}
       </article>
     {{/each}}
   </section>
