@@ -1,6 +1,6 @@
 'use strict';
 
-const main = () => {
+const mainPlaylistCool = () => {
   const collectionForm = document.querySelector('.playlist-scrolldown-form');
   const playlistCollectionScrolldown = document.querySelector('.playlist-scrolldown-collection');
   // show playlist
@@ -68,7 +68,6 @@ const main = () => {
       // playlistCollectionScrolldown.appendChild(article);
 
       buttonDelete.addEventListener('click', async (e) => {
-        
         await axios.post(`/api/playlistCollection/${newPlaylist._id}/delete`);
         article.remove();
       });
@@ -78,4 +77,4 @@ const main = () => {
   });
 };
 
-window.addEventListener('load', main);
+window.addEventListener('load', mainPlaylistCool);

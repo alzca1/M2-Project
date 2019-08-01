@@ -1,6 +1,6 @@
 'use strict';
 
-const main = () => {
+const mainNavbar = () => {
   const searchView = document.querySelector('.search-hidden-navbar');
   const anchor = document.querySelector('.big-icon');
   const close = document.querySelector('.close-search');
@@ -16,4 +16,4 @@ const main = () => {
   });
 };
 
-window.addEventListener('load', main);
+window.addEventListener('load', mainNavbar);

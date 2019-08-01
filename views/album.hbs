@@ -22,7 +22,6 @@
       <article class="list-elements">
         <div class="info-wrapper">
           <h2>{{this.name}}</h2>
-          {{!-- <p>{{this.release_date}} · {{this.artists.0.name}}</p> --}}
         </div>
         <audio controls name="media">
           <source src="{{this.preview_url}}" type="audio/mpeg">
@@ -38,24 +37,35 @@
           </li> --}}
           {{!-- <li> <a href="#0" class="add-button">add</a></li> --}}
         {{!-- </ul> --}}
-          {{#each this.myPlaylist}}
-              <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}/from/{{../artists.0.id}}" method="POST">
-                <button class="btn-add" type="submit">add song</button>
-              </form>
-            </li>
-          {{/each}}
       </article>
+      <section class="add-to-playlists">
+        <a class="close-playlists" href="#0">
+          <img src="../images/add.png" alt="close search page form navbar">
+        </a>
+        <h2>Playlists</h2>
+        <hr>
+        {{#each this.myPlaylist}}
+            <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}/from/{{../artists.0.id}}" method="POST">
+              <p>{{this.name}}</p>
+              <button class="btn-add" type="submit">
+                <img src="../images/rounded-add.png" alt="add song to playlist icon">
+              </button>
+            </form>
+          </li>
+          <hr>
+        {{/each}}
+      </section>
     {{/each}}
   </section>
 </section>
 
 
-
 {{!-- <section class="add-to-playlists">
+  <p>hola</p>
   <ul>
     {{#each user.playlists}}
       <li>{{this.name}}
-        <form action="/album/{{this.id}}/add/{{this.albumId}}" method="POST">
+        <form action="/album/{{this.id}}/add/{{this.albumId}}/to/{{../id}}/from/{{artists.0.id}}" method="POST">
           <button class="btn-add" type="submit">add song</button>
         </form>
       </li>
@@ -63,5 +73,7 @@
   </ul>
 </section> --}}
 {{> userNavbar}}
+
+<script src="../javascripts/albumSongs.js"></script>
 
 
