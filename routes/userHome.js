@@ -28,7 +28,6 @@ router.get('/', async (req, res, next) => {
 
     multipromise.then(() => {
       const data = { artistsInfo, albumsInfo, newUser };
-      console.log(albumsInfo[0].images);
       res.render('userHome', data);
     });
   } catch (error) {
@@ -36,13 +35,12 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.get('/favouriteSongs', async (req, res, next) => {
-  const user = req.session.currentUser;
-  const myUser = User.findById(user._id);
+// router.get('/favouriteSongs', async (req, res, next) => {
+//   const user = req.session.currentUser;
+//   const myUser = User.findById(user._id);
 
-
-  // const superInfoTrack = { playlist, album, trackInfo };
-  res.render('favouriteSongs', superInfoTrack);
-});
+//   // const superInfoTrack = { playlist, album, trackInfo };
+//   res.render('favouriteSongs', superInfoTrack);
+// });
 
 module.exports = router;

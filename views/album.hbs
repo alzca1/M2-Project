@@ -9,7 +9,9 @@
   </div>
    
   <form action="/album/{{albumData.id}}/addAlbum" method="POST" class="like">
-    <button class="btn-add" type="submit">like artist</button>
+    <button class="btn-add" type="submit">
+      <img src="../images/heart.png" alt="like icon">
+    </button>
   </form>
 
   <section class="list-info-section">
@@ -25,6 +27,9 @@
         <audio controls name="media">
           <source src="{{this.preview_url}}" type="audio/mpeg">
         </audio>
+        <a href="#0" class="add-button">
+          <img src="../images/add.png" alt="add icon">
+        </a>
         {{!-- <ul>
           {{!-- <li>
             <form action="/album/{{this.id}}/like/{{this.albumId}}" method="POST">
@@ -32,7 +37,7 @@
             </form>
           </li> --}}
           {{!-- <li> <a href="#0" class="add-button">add</a></li> --}}
-        {{!-- </ul> --}} --}}
+        {{!-- </ul> --}}
           {{!-- {{#each this.myPlaylist}}
             <p>{{../name}}</p>
             <li>{{this.name}}

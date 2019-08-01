@@ -9,7 +9,9 @@
   </div>
    
   <form action="/artist/{{infoArtist.id}}/addArtist" method="POST" class="like">
-    <button class="btn-add" type="submit">like artist</button>
+    <button class="btn-add" type="submit">
+      <img src="../images/heart.png" alt="like icon">
+    </button>
   </form>
 
   <section class="list-info-section">
@@ -27,7 +29,9 @@
       <div class="info-wrapper">
         <h2>{{this.name}}</h2>
         <p>{{this.release_date}} · {{this.album_type}}</p>
-        <a href="/album/{{this.id}}"></a>
+        <a href="/album/{{this.id}}">
+          <img src="../images/arrow-white.png" alt="add icon">
+        </a>
       </div>
     </article>
     {{/each}}

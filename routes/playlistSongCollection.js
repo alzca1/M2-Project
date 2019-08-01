@@ -62,6 +62,4 @@ router.post('/:idPlaylist/delete/:newTrackId', async (req, res, next) => {
   }
 });
 
-
-
 module.exports = router;
