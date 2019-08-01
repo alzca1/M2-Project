@@ -10,7 +10,8 @@ const playlistSchema = new Schema({
   },
   images:
     [{
-      type: String
+      type: String,
+      default: 'https://pmctvline2.files.wordpress.com/2019/07/michael-jackson-mtv.jpg'
     }],
   tracks:
     [{

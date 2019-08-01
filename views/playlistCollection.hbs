@@ -1,6 +1,6 @@
 <section class="playlist-collection-page">
 
-  <a class="go-back" href="javascript: history.go(-1);location.replace(document.referrer)">
+  <a class="go-back" href="/userHome">
     <img src="../images/arrow-left-color.png">
   </a>
 
@@ -21,11 +21,11 @@
       <div class="info-wrapper">
         <h2>{{this.name}}</h2>
         <a class="view-more" href="/playlistSongCollection/{{this.id}}">
-          <img src="../images/arrow-white.png" alt="add icon">
+          <img src="../images/arrow-white.png" alt="add icon">add
         </a>
         <form action="/playlistCollection/{{this.id}}/delete" method="POST">
           <button class="btn-delete" type="submit">
-            <img src="../images/arrow-white.png" alt="add icon">
+            <img src="../images/arrow-white.png" alt="add icon">delete
           </button>
         </form>
       </div>
@@ -43,13 +43,13 @@
   {{> userNavbar}}
 </section>
 
-{{!-- <section class="playlist-scrolldown-collection">
+<section class="playlist-scrolldown-collection">
   <form class="playlist-scrolldown-form">
     <label for="name">name</label>
     <input type="text" name="name" id="name">
     <button class="playlist-create" type="submit">Add playlist</button>
   </form> 
-</section> --}}
+</section>
 
 {{> userNavbar}}
 

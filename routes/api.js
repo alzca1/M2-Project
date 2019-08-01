@@ -61,4 +61,14 @@ router.post('/playlistCollection', /* isFormFilled, */ async (req, res, next) =>
   }
 });
 
+router.post('/playlistCollection/:id/delete', async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    await Playlist.findByIdAndDelete(id);
+    res.json({ message: 'Deleted OK!' });
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
