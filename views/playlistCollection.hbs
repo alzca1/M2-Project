@@ -11,21 +11,21 @@
  <section class="list-elements">
   {{#each playlists}}
     <article>
-      <div class="image-wrapper">
+      {{!-- <div class="image-wrapper">
         {{#if this.images.0.url}}
           <img src="{{this.images.0.url}}" alt="artist photo">
         {{else}}
           <img src="./images/man-4-400.jpg" alt="artist photo">
         {{/if}}
-      </div>
+      </div> --}}
       <div class="info-wrapper">
         <h2>{{this.name}}</h2>
         <a class="view-more" href="/playlistSongCollection/{{this.id}}">
-          <img src="../images/arrow-white.png" alt="add icon">add
+          <img src="../images/arrow-white.png" alt="add icon">
         </a>
         <form action="/playlistCollection/{{this.id}}/delete" method="POST">
           <button class="btn-delete" type="submit">
-            <img src="../images/arrow-white.png" alt="add icon">delete
+            <img src="../images/delete.png" alt="delete icon">
           </button>
         </form>
       </div>
@@ -41,14 +41,6 @@
   {{/each}}
   </section>
   {{> userNavbar}}
-</section>
-
-<section class="playlist-scrolldown-collection">
-  <form class="playlist-scrolldown-form">
-    <label for="name">name</label>
-    <input type="text" name="name" id="name">
-    <button class="playlist-create" type="submit">Add playlist</button>
-  </form> 
 </section>
 
 {{> userNavbar}}
