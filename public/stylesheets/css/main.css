@@ -436,7 +436,7 @@ section.testimonials .button {
           height: 20px;
           width: auto; }
   #private-main .covers, .search-results .covers, .artist-page .covers, .album-page .covers, .playlist-song-collection-page .covers, .playlist-collection-page .covers, #profile .covers {
-    width: 80%;
+    width: 90%;
     height: 180px;
     margin: 25px 0 20px 10%;
     position: relative; }
@@ -448,29 +448,31 @@ section.testimonials .button {
       #private-main .covers .covers-text h2, .search-results .covers .covers-text h2, .artist-page .covers .covers-text h2, .album-page .covers .covers-text h2, .playlist-song-collection-page .covers .covers-text h2, .playlist-collection-page .covers .covers-text h2, #profile .covers .covers-text h2 {
         font-size: 16px;
         width: auto;
-        color: #80713E; }
+        color: #80713E;
+        margin: 20px 0 0 0; }
       #private-main .covers .covers-text .all-covers, .search-results .covers .covers-text .all-covers, .artist-page .covers .covers-text .all-covers, .album-page .covers .covers-text .all-covers, .playlist-song-collection-page .covers .covers-text .all-covers, .playlist-collection-page .covers .covers-text .all-covers, #profile .covers .covers-text .all-covers {
         top: 0;
         width: auto;
         font-size: 12px;
         text-decoration: none;
-        color: rgba(0, 0, 0, 0.35); }
+        color: rgba(0, 0, 0, 0.35);
+        margin-right: 11%; }
     #private-main .covers .playlist-slider, .search-results .covers .playlist-slider, .artist-page .covers .playlist-slider, .album-page .covers .playlist-slider, .playlist-song-collection-page .covers .playlist-slider, .playlist-collection-page .covers .playlist-slider, #profile .covers .playlist-slider {
       width: auto;
-      height: 120px;
+      height: 180px;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      margin-top: 10px; }
+      overflow-x: scroll; }
       #private-main .covers .playlist-slider .cover-article, .search-results .covers .playlist-slider .cover-article, .artist-page .covers .playlist-slider .cover-article, .album-page .covers .playlist-slider .cover-article, .playlist-song-collection-page .covers .playlist-slider .cover-article, .playlist-collection-page .covers .playlist-slider .cover-article, #profile .covers .playlist-slider .cover-article {
         width: 110px;
         height: 140px;
         border-radius: 10px;
         background-color: #FF8178;
         margin-right: 10px;
-        -webkit-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
-        -moz-box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4);
-        box-shadow: 0px 20px 77px -23px rgba(0, 0, 0, 0.4); }
+        -webkit-box-shadow: 0px 15px 20px -15px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0px 15px 20px -15px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 15px 20px -15px rgba(0, 0, 0, 0.4); }
         #private-main .covers .playlist-slider .cover-article a, .search-results .covers .playlist-slider .cover-article a, .artist-page .covers .playlist-slider .cover-article a, .album-page .covers .playlist-slider .cover-article a, .playlist-song-collection-page .covers .playlist-slider .cover-article a, .playlist-collection-page .covers .playlist-slider .cover-article a, #profile .covers .playlist-slider .cover-article a {
           width: 110px;
           height: 140px;
